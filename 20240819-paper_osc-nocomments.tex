@@ -173,8 +173,7 @@ The aim of this work is the study of geodesics on Lorentzian homogeneous spaces 
 
 \author{Pablo Montenegro and Gabriela P. Ovando}
 
-\let\today\relax % Remove date
-
+\let\today\relax 
 \thanks{{\it (2000) Mathematics Subject Classification}: 53C50
 	53C22
 	22F30
@@ -217,28 +216,20 @@ a timelike geodesic, that is, for which  $\la \gamma'(t), \gamma'(t)\ra < 0$   r
 	
 	
 	\section{Lie groups with Lorentzian bi-invariant metrics}\label{section1}
-	In this section one can find an introduction to general  results about Lie groups with bi-invariant Lorentzian metrics. %That is, basic notions, features, geodesics and the construction of the induced  homogeneous spaces, by taking a lattice in the Lie group.  
+	In this section one can find an introduction to general  results about Lie groups with bi-invariant Lorentzian metrics. 
 	
 	Let $G$ denote a (real) Lie group with Lie algebra $\mgg$. 
 	A \textit{bi-invariant} metric on  $G$ is a pseudo-Riemannian metric $\bil$ for which every translation on the left $L_g$ and on the right $R_g$ by elements of the group $g\in G$, are isometries. This gives that the conjugation maps $I_g: G \to G$, $I_g(x)=gxg^{-1}$ are isometries. And so,  the differential of the Adjoint map is a linear isometry on $\mgg$, $d(I_g)_e= Ad(g)$. One has the following equivalences (see Chapter 11 in \cite{ON}):
-	%For such lie group one has the following equivalences (see Chapter 11 in \cite{ON}):
 	\begin{enumerate}\label{[(i)]}
 		\item $\bil$ bi-invariant;
 		\item $\bil$ Ad($G$)-invariant;
-		%\item  the inversion map $g \to g^{-1}$ is an isometry of $G$;
 		\item $\lela [X, Y], Z\rira + \lela Y, [X, Z]\rira= 0$ for all $X, Y, Z \in\mgg$;
-		%\item $\nabla_X Y = \frac12 [X,Y]$ for all $X, Y \in \mgg$, where $\nabla$ denotes the Levi-Civita connection;
 		\item the geodesics of $G$ starting at the identity element $e$ are the one-parameter subgroups of $G$, that is:
 		\begin{equation}\label{onepara}
 			\alpha(t)=\exp(tX), \qquad \mbox{ for }X  \in \mgg, 
 		\end{equation}
 		and the geodesic through $g\in G$ with initial left-invariant vector $X$ is given by the translation of the curve above, that is $g\exp(tX)$. 
 	\end{enumerate}
-	% Geodesics of these groups through the identity can be computed as the so called \textit{one-parameter subgroups} \cite{ON}, that is
-	%\begin{equation}\label{onepara}
-	%\alpha(t)=e^{tX}, X  \in \mgg
-	%\end{equation}
-	%where $\mgg$ is $G$'s Lie algebra.\\
 	If the bi-invariant metric on a Lie group $G$ of dimension $n$ has signature $(1,n-1)$, the metric is called a {\em Lorentzian metric}. 
 	
 A given vector field  $X\in TG$  is called 
@@ -248,194 +239,12 @@ A given vector field  $X\in TG$  is called
 		\item {\em lightlike} or {\em null}  if  $\lela X,X \rira = 0$.
 	\end{itemize}
 More generally this is extended to geodesics: 	a geodesic on $G$ with  initial condition $X$, namely $\gamma_X(t)$, is called {\em spacelike, timelike or lightlike} if $X$ is in the respective class above. 
-
-%	The special linear Lie group $\sldr$ consisting of  $2 \times 2$ real matrices with determinant one,  admits a bi-invariant Lorentzian metric. The construction of this metric starts on the Lie algebra of the group, $\gsldr$: identified with the real traceless $2 \times 2$-matrices. Here one can consider the Killing form $B$:
-	
-	
-%	\begin{equation*} \mbox{Let \,\,\,}
-%		X=\left( \begin{array}{ccc}
-%			x_1 & x_2 \\
-%			x_3 & -x_1 \end{array} \right)
-%		,Y=\left( \begin{array}{ccc}
-%			y_1 & y_2 \\
-%			y_3 & -y_1 \end{array} \right) \in \gsldr
-%	\end{equation*}
-%	then
-%	\begin{equation} \label{killing}
-%		\B(X,Y)=4 Tr(X Y)=8x_1y_1+4x_2y_3+4x_3y_2.
-%	\end{equation}
-	
-%	By extending this bilinear form to the group using translations on the left, one obtains a left-invariant metric on the Lie group which is also right-invariant. 
-	
-	
-%	\begin{exa} \label{example1}
-%		{\bf Geodesics on  $\sldr$}.  Let $X \in \gsldr$. An easy 		computation shows that  $X$ is lightlike by satisfying
-		
-%		\smallskip
-		
-%		{\em $\B(X,X)=0$ \quad if and 
-%			only if \quad $X^2 =0$ \quad if and only if \quad $det(X)=0$.}
-		
-%		\smallskip
-		
-%		In fact for any $X\in \gsldr$ of the form
-%			\[ 		X=\left( \begin{matrix} 			x_1 & x_2 \\
-%			x_3 & -x_1 \end{matrix} \right) 
-%		, \qquad \mbox{one has} \qquad X^2=\left( \begin{matrix}
-%			x_1^2+x_2x_3 & 0 \\
-%			0 & x_1^2+x_2x_3 \end{matrix} \right). 
-%		\]
-%	\end{exa}
-	
-%	More generally,  for  any $X\in \gsldr$ one has $B(X,X)=4 Tr(X^2)= 8 (-\det(X))$. 
-%	Thus the geodesics of $\sldr$ starting at the identity and with initial condition $X\in \gsldr$ are the one-parameter subgroups ($I$ denotes the identity matrix):
-%	\begin{eqnarray*}
-%		\cosh(-det(tX))^{1/2} I + \frac{\sinh(-det(tX))^{1/2}}{(-det(tX))^{1/2}}X  \qquad \qquad & \mbox{ if $det(X)<0$}\\
-%		\cos(det(tX))^{1/2} I + \frac{\sin(det(tX))^{1/2}}{(det(tX))^{1/2}}X  \qquad \qquad & \mbox{ if $det(X)>0$}\\
-%		I + tX  \qquad \qquad & \mbox{ if $det(X)=0$,}
-%	\end{eqnarray*}
-%	which correspond to spacelike, timelike and lightlike geodesics respectively, (see Exercises and further results Ch. II in \cite{HEL}). In this work an alternative presentation of geodesics will be used, presentation that is written by using the conjugation by an element $C$ of $\sldr$
-	
-	
-	
-	%\footnote{Making use of  \ref{onepara} one can compute  geodesics of $\sldr$ at the identity. COMPARAR CON EJERCICIO EN HELGASSON PAG. 149}
-	
-%	\begin{prop}\label{sl2r} Let $\sldr$ denote the Lie group equipped with the Lorentzian metric  induced by the  Killing form $\B$. The geodesics starting at the identity 
-		%with initial condition $X\in \gsldr$ 
-%		are curves  defined for every $t\in \RR$ of one of  the following  families:
-%		\begin{eqnarray*}\label{equ1}
-%			\textbf{spacelike}: \qquad \qquad &  C^{-1} \left( \begin{array}{ccc}
-%				\cosh(k t) & \sinh(kt) \\ 
-%				\sinh(kt) & \cosh(kt) \end{array} \right) C,  \qquad & 0 \neq k \in \mathbb{R},\\
-%			\textbf{timelike}:  \qquad \qquad & C^{-1} \left( \begin{array}{ccc}
-%				\cos(k t) & -\sin(kt) \\ 
-%				\sin(kt) & \cos(kt) \end{array} \right) C,  \qquad   &% 0 \neq k \in \mathbb{R},\\
-%			\textbf{lightlike:}  \qquad \qquad &  \qquad \quad \left( \begin{array}{ccc}
-%				1+x_1 t & x_2t \\
-%				x_3t & 1-x_1t \end{array} \right),  \qquad \qquad & x_1^2+x_2x_3 = 0,
-%		\end{eqnarray*}
-%		for any $ \, C \in \sldr$. \end{prop}
-	
-%	\begin{proof}
-%		Since geodesics at the identity are  one-parameter subgroups,  a geodesic starting at the identity $\gamma_X(t)$ is given by  the usual exponential of matrices.
-		
-%		Take as initial condition of the geodesic, a general element $X\in \gsldr$ of the form 
-%		$X=\left( \begin{array}{ccc}
-%			x_1 & x_2 \\
-%			x_3 & -x_1 \end{array} \right) \in \gsldr$. 
-		
-%		\begin{itemize}
-%			\item Assume $X$ is a lightlike vector. As seen in Example \ref{example1}, one has  $X^2=0$ and  therefore the geodesic $\gamma_X(t)$ is given by $\gamma_X(t)=Id+tX$,  which gives the respective expression in Equation \eqref{eq1}.
-			
-%			\item Consider now the timelike vector $M_k= \left( \begin{array}{ccc}
-%				0 & -k \\
-%				k & 0 \end{array} \right)$, where $k$ is a non-zero real constant. Usual computations   give
-%			$$e^{tM_k}=\left( \begin{array}{ccc}
-%				cos(k t) & -sen(kt) \\ 
-%				sen(kt) & cos(kt) \end{array} \right),$$ which are timelike geodesics for any $k\in \R-\{0\}$. Moreover, since translations on the left and on the right are isometries, for any $C \in \sldr$, a curve of the form 
-%			$$C^{-1} \left( \begin{array}{ccc}
-%				cos(k t) & -sen(kt) \\ 
-%				sen(kt) & cos(kt) \end{array} \right) C$$ is also a timelike geodesic through the identity. The claim is that every timelike geodesic starting at the identity is of this form.
-			
-%			In fact, let $X \in \gsldr$ be any timelike vector field. Clearly $\det(X)> 0$. Note that $e^{tX}=C^{-1} e^{tM_k} C$ comes as a consequence of taking the exponential whenever   
-%			$X = C^{-1} M_k C$. Thus, one needs to verify that there exist $k\in \R-\{0\}$ and $C\in \sldr$ such that 
-%			\begin{equation}
-%				X = C^{-1} M_k C\qquad \mbox{ equivalently } \qquad CX = M_k C.
-%			\end{equation} 
-			
-%			Notice that $k^2 = det (X)$. In order to solve $CX = M_k C$ for $k$ and $C$, let $M_1=\left( \begin{array}{ccc}
-%				0 & -1 \\ 
-%				1 & 0 \end{array} \right)$ and noticed that $M_k=kM_1$ where $k$ is chosen by satisfying $k^2 = det (X)$. Now  the equation  $C X - k M_1 C = 0$ is a linear system in the entries of $C$: $(c_1,c_2,c_3,c_4)$, where $C = \left( \begin{array}{ccc}
-%				c_1 & c_2 \\ 
-%				c_3 & c_4 \end{array} \right)\in \sldr $. Thus finding solutions of $C X=kM_1C$ is equivalent to find solutions of the following system:			
-%			\begin{equation}\label{equ2}
-%				\left( \begin{matrix}
-%					x_1 & x_3  & k & 0 \\
-%					x_2 & -x_1  & 0 & k \\
-%					-k & 0  & x_1 & x_3 \\
-%					0 & -k  & x_2 & -x_1 
-%				\end{matrix} \right)
-%				\left( \begin{matrix}
-%					c_1 \\
-%					c_2 \\
-%					c_3 \\
-%					c_4
-%				\end{matrix} \right)=
-%				\left( \begin{matrix}
-%					0 \\
-%					0 \\
-%					0 \\
-%					0
-%				\end{matrix} \right). 
-%			\end{equation}
-%			Since  $k\neq 0$ satisfies  $k^2=det(X)$, the resulting solution  space to Equation \ref{eq2} is given by $C$ with entries 
-%		\begin{equation}\label{C}
-%			C=\left( \begin{matrix}
-%				u \frac{x_1}{k}+v\frac{x_3}{k} & u%\frac{x_2}{k}-v\frac{x_1}{k}\\
-%				u & v 
-%				\end{matrix} \right):u,v \in \R.\end{equation}
-%			The solutions have determinant  equals $1$ whenever 
-%			
-%			\begin{equation}\label{determinanteq}
-%						2u v x_1 + v^2 x_3-u^2 x_2 -k=0.
-%		\end{equation} 
-%	Choose $k$ such that $k^2=det(X)$ and  $x_2k < 0$. Thus, the equation above has real solutions $u,v$ (here  start by thinking the equation above by fixing $v$ and solving the quadratic equation for $u$). 	
-	%	For any $k<0$ such that $det(X)=k^2$, there exist real solutions $u,v$  whenever $v^2 > -x_2$, which is always possible. 
-			
-			% When a solution $(a,b,c,d)$ has positive determinant $m$ one can simply divide the solution by the square root of its determinant and the new matrix $C=\frac{1}{\sqrt{m}}(a,b,c,d)$ will be an element of $SL(2,\RR)$.\\
-			
-%			\item For the spacelike case, the reasoning is analogous to that one given in the timelike case. Firstly consider the spacelike vectors $P_k=k \left( \begin{array}{ccc}
-%				0 & 1 \\
-%				1 & 0 \end{array} \right)$, $k \neq 0$, which produce the next family of spacelike geodesics starting at the idenity
-%			$$e^{tP_k}=\left( \begin{array}{ccc}
-%				cosh(k t) & senh(kt) \\ 
-%				senh(kt) & cosh(kt) \end{array} \right), $$
-%			and one also has the family of geodesics 
-%			$$C^{-1} \left( \begin{array}{ccc}
-%				cosh(k t) & senh(kt) \\ 
-%				senh(kt) & cosh(kt) \end{array} \right) C,$$
-%			for any $C \in \sldr$.
-			
-%			To prove that every spacetime geodesic starting at the identity can be written as  above,  one needs to prove that there exist  $0 \neq k \in \RR$ and $C \in \sldr$ such that   $X = C^{-1} P_k C$ where $X$ is a spacelike vector (therefore $\det(X)< 0$). Clearly it holds  $det(X)=-k^2$. Thus the equation 
-%			$C X - P_k C = 0$ has a solution if and only if the following linear system has a non-trivial solution $C=(c_1,c_2,c_3,c_4)$:
-%			\[\left( \begin{matrix}
-%				x_1 & x_3  & -k & 0 \\
-%				x_2 & -x_1  & 0 & -k \\
-%				-k & 0  & x_1 & x_3 \\
-%				0 & -k  & x_2 & -x_1 
-%			\end{matrix} \right)
-%			\left( \begin{matrix}
-%				c_1 \\
-%				c_2 \\
-%				c_3 \\
-%				c_4
-%			\end{matrix} \right)=
-%			\left( \begin{matrix}
-%				0 \\
-%				0 \\
-%				0 \\
-%				0
-%			\end{matrix} \right),
-%			\]
-%			and with $C\in \sldr$. Usual computations show that the solution space is given by the set of matrices $C$, whose entries satisfy Equation \eqref{C}. Thus, $C$ belongs to $\sldr$ if and only if Equation \eqref{determinanteq} holds. In this case, choose $k$ such that  $det(X)=-k^2$, and one gets solutions if $v^2 \geq x_2/k$. 
-			
-			%$\Bigl\{ \big( u \frac{x_1}{k}+v\frac{x_3}{k},u\frac{x_2}{k}-v\frac{x_1}{k},u,v \Big):u,v \in \R \Bigr\}$
-			
-		%	when choosing $k$ such that $k^2=-det(X)$. Applying the same/ technique that was applied in the timelike case it can be shown that this nullspace contains elements of $\sldr$.
-%		\end{itemize}
-%	\end{proof}
-	
-	
-%	Note that $\sldr$ is {\em complete} in the sense that geodesics are defined on $\RR$. 
-	
-%	\smallskip
 	
 	Examples of Lie groups with bi-invariant Lorentzian metrics arise from the so called  \textit{oscillator groups}. Denoted by $\oscn$, an oscillator Lie group is the simply connected Lie group with real Lie algebra of dimension $2n+2$, namely $\mathfrak{osc}_n(\lambda_1,...,\lambda_n)$, with $\lambda_i\in \R_{>0}$. This Lie algebra is  spanned by the basis $Z$,$\{X_i,Y_i\}_{i=1}^n$, $T$ satisfying the non-trivial Lie bracket relations
 	\[ [X_i,Y_i]=Z, \quad [T, X_i]=\lambda_i Y_i, \quad  [T, Y_i]=- \lambda_i X_i.  \]
 Denote by $\lela\,,\, \rira$  the ad-invariant  metric on $\mathfrak{osc}_n(\lambda_1,...,\lambda_n)$ with  the non-zero relations
 	\[ \lambda_i \lela X_i,X_i \rira  = \lambda_i \lela Y_i,Y_i \rira = \lela Z,T  \rira  = 1.\]
 	
-	%These groups are the only connected, simply connected, non-abelian solvable groups which admit such metric \cite{Me,MeRe}. 
 	The oscillator Lie groups   have the differential structure of $\R \times \R^{2n} \times \R$ with the following group product
 	\begin{equation*}
 		(z_1,v_1,t_1) . (z_2,v_2,t_2)=(z_1+z_2+\frac{1}{2}v_1^{\tau}J R(t_1)v_2,v_1+R(t_1)v_2,t_1+t_2),
@@ -514,9 +323,6 @@ Denote by $\lela\,,\, \rira$  the ad-invariant  metric on $\mathfrak{osc}_n(\lam
 	
 	
 	\subsection{Quotient spaces} 
-	%tal vez citar a otro, o al de internet Rory Biggs.
-	
-	
 	
 Let $G$ denote a Lie group and let  $\Gamma\subset G$ be a discrete cocompact subgroup. 	The quotient space $M=G/\Gamma$ consists of elements of the form $g\Gamma$ with $g \in G$. Since $\Gamma$ is closed, there exists a unique manifold structure on $M$ for which the canonical projection $g \mapsto g\Gamma$ is a smooth submersion (see \cite{Hel}). Finally, the geometry of $M$ is provided by requiring the projection, named $\pi$, to be a local isometry. Whenever the Lie group  $G$ is provided with a Lorentzian metric, $(G,\pi)$ is called  a \textit{Lorentzian covering} of $M$.
 	
@@ -539,14 +345,11 @@ One can notice that:
 	
 Since $\pi \circ L_g = \tau_g \pi$, one gets that $\tau(g)\pi\circ \alpha=\pi\circ L_g \circ \alpha$ for a curve $\alpha:(a,b)\to G$ starting at the identity element  $e\in G$. 
 
-	 A curve $\beta:(a,b)\to G$ (or to $M$) is said {\em non-simple } when it passes through a same point more than once, that is, there exist $t_2\neq  t_1$ such that $\beta(t_1)=\beta(t_2)$. %\pi(g\alpha)(t_1)=\pi(g\alpha)(t_2)$.. It is not hard to see that 
 	\begin{enumerate}
 		\setcounter{enumi}{3}
-	%	\item Any geodesic of $M$ has the form $\pi(g\alpha)$, where $g \in G$ and $\alpha$ is a geodesic of $G$ such that $\alpha(0)=e$. 
 		
 		\item A geodesic $\alpha: (-\varepsilon, \varepsilon) \to G$, with $\varepsilon>0$ and   $\alpha(0)=e$   giving rise the the curve $\pi\circ \alpha$ in $M$  is non-simple in $M$ if and only if  $\alpha(t) \in \Gamma$ for some $t>0$.\label{punto4}
 	\end{enumerate}
-%	This follows by observing that $\pi(e)=\pi(\gamma)$ for every $\gamma \in \Gamma$. 
 	In particular the projection of a non-simple geodesic in $G$ is always a closed curve in $M$.
 	
 
@@ -598,7 +401,6 @@ In this paper, {\em closed} geodesics will be periodic ones.
 	
 	Let $L(\xi_0)$ be the subgroups generated by $$\{ (1,0,0),(0,e_i,0),(0,\xi_0, 1) \}$$ where $\xi_0$ is an element in $\R^{2n}$ such that the above subgroup is a lattice. 
 	
-%	In each of these groups the author defines the subgroups generated by $$\{ (1,0,0),(0,e_i,0),(0,\xi_0, 1) \}$$ and if $\xi_0$ is such that the latter produce a lattice then subgroup is called $L(\xi_0)$. 
 In particular, according to Example 3.1 of \cite{MF}, the element $\xi_0$ verifies the following condition 
 	\begin{equation}\label{xi-condition}
 		(\omega_r(\xi_0, e^{B_r}e_i), e^{B_r} e_i, 0) \in \,\, <\{ (1,0,0),(0,e_i,0) \}>
@@ -615,7 +417,7 @@ We assert that  the lattices $L(\xi_0)$ of $Osc_n(w_r, B_r)$ can be associated t
 
 	Additionally it is shown that $B_r := \pm t_0 S N_{\lambda} S^{-1}$ \footnote{this follows by  noticing that $\oscn = Osc_n(w_{1}, N_{\lambda})$.}, for some invertible matrix $S$. 
 	
-	\begin{lem}\cite{MF}\label{oscilador-elementos}  %dar idea demostracion
+	\begin{lem}\cite{MF}\label{oscilador-elementos} 
 		Let $\Gamma$ be any lattice of $\oscn$. Then:
 		\begin{enumerate}
 			\item There always exists \, $w \neq 0 \in \R$ such that $(w,0,0) \in \Gamma$.
@@ -754,7 +556,6 @@ We assert that  the lattices $L(\xi_0)$ of $Osc_n(w_r, B_r)$ can be associated t
 			
 			Let $X =  d' \ Z + \sum_j (b_j X_j + c_j Y_j) + a T$ de the initial condition of the geodesic $\alpha_{d'}$. For any $\varepsilon >0$ consider the interval  $I_d := [d, d+ \epsilon]$. Take  $d'\in I_d$ and assume that the geodesic $\alpha_{d'}$ intersects the lattice  at $s'$, say $\alpha_{d'}(s') \in \Gamma$. Then it must hold $t'(s') = r' t_0$ for some integer $r'$. Now, define a function $F: I_d \to \ZZ$, that sends $d'\to r'$. 
 		Clearly there exists and element denoted by $r_{\infty}\in \ZZ$ such that  the  preimage  $F^{-1}(r_{\infty})$ is an infinite set. Since $F^{-1}(r_{\infty})\subset I_d$, then this set is bounded and it must contain a convergent sequence, namely $\{d'_n\}$.
-			%It is easy to see that there is an infinitely repeating \footnote{\color{red} no se entiende que es infinitely repeating} element in the image of $F$, named it $r_{\infty}$. Then $A_d:= \{ d' \in I_d : F(d')= r_{\infty} \}$ is bounded \footnote{\color{red} and closed?}. This it contains a convergent subsequence, namely $\{d'_n\}$.
 			
 			Take the elements in the lattice $\Gamma$ given by
 			\begin{eqnarray*}
@@ -811,7 +612,6 @@ We assert that  the lattices $L(\xi_0)$ of $Osc_n(w_r, B_r)$ can be associated t
 	In conclusion, since it is possible to choose $w$ for which the equality above never holds  for any $k,z \in \Z$, lightlike geodesics of $Osc_1(1) \times \R/\Gamma$ are never closed. Take for instance  $w = e\in \R$. 
 	
 	
-	%verificar si el espacio generado esta bien
 	
 	
 	\section{Isometries of the oscillator groups and compact quotients}
@@ -896,16 +696,6 @@ Below, one describes the structure of $F(\mathfrak{osc}_n(\lambda_1, \hdots, \la
 \end{prop}
 
 To describe the structure of $F$, we identify the interior automorphisms, that we introduced as conjugation maps. Let $I_h$ denote the interior automorphism, with $d_e I_h=Ad(h): \mathfrak{osc}_n(\lambda_1, \hdots, \lambda_n)$. If we denote by $h=(z,v,t)$, clearly $I_h=I_{(0,v,t)}$.
-%\begin{itemize}
-%	\item  $Ad(0,0,t) =\left( \begin{matrix}
-%	1 & & \\& R(t) & \\
-%	& & 1
-%	\end{matrix} \right)$.
-%	\item $Ad(0,v,0)= \left( \begin{matrix}
-%1 & &  \\& Id_{2n} & \\
-%	& & 1
-%	\end{matrix} \right)$.
-%\end{itemize}
 
 Let $P_{\lambda_i}(t)\in \mathrm{SO}(2)$ define by
 $$P_{\lambda_i}(t):=\left\{
@@ -1008,7 +798,7 @@ $$Iso(\oscn)=L(\oscn) F(\oscn)$$
 
 \subsection{Isometries in the quotients. } The aim now is to study the isometry group of the quotient spaces. Let $\Lambda$ denote a discrete subgroup of $\oscn$ such that  $M=\oscn/\Lambda$ is a compact space. Since the metric on $\oscn$ is both, right and left-invariant, it can be induced to the cosets $g\Lambda\in M$. Indeed a isometry of $M$ gives rise to a local isometry in $\oscn$, since the projection $\oscn \to M$ is a submersion which is a local isometry. Thus, one has a local isometry of $\oscn$ satisfying conditions in the paragraphs above. 
 
-On the other hand, some isometries of $\oscn$ can be induced to the quotient. The next result explicit conditions of such maps. %In fact,  any translation on the left $L_h:\oscn \to \oscn$ can be induced to the quotient as the map $\tau_h(g\Lambda)=hg\Lambda$. 
+On the other hand, some isometries of $\oscn$ can be induced to the quotient. The next result explicit conditions of such maps. 
 
 \begin{defn} Let $f$ be  an isometry of $\oscn$, and $\Lambda$ a lattice. We say that $f$ is {\em fiber preserving} if $f(g)^{-1} f(g\lambda) \in\Lambda$ for all $g \in \oscn$, and for every $\lambda\in \Lambda$. 
 \end{defn}
@@ -1201,7 +991,6 @@ $$I_4 := \ZZ^4 \cup F^4.$$
     \def\arraystretch{1.5}
     \begin{center}
     \begin{tabular}{|c|c|}\hline
-    % \textbf{Condition} & \textbf{Time Interval} & \textbf{Value} \\\hline
     \multirow{2}{*}{M=1,2,4} & $t \in \frac{q \pi}{2} \mathbb{Z}$   \\\cline{2-2}
         & $(v_1,v_2,v_3,v_4) \in \ZZ^4 / {2 k}$  \\\hline
     \multirow{2}{*}{M=2} & $(v_1,v_2) \in \ZZ^2/2$  \\\cline{2-2}
@@ -1352,7 +1141,6 @@ This result is straightforward from the previous Lemma when combining all condit
 	\bibitem{MeRe} {\sc A. Medina,  P. Revoy}, {\it Les groupes oscillateurs et leurs r\'eseaux. (Oscillator groups and their lattices).}, Manuscr. Math. {\bf 52}, 81--95 (1985). 
 	
 	
-%	\bibitem{DM} {\sc D. W. Morris}, {\it Manuscr. Math. 52, 81-95 (1985). }, Deductive Press (2015).
 	
 	
 	\bibitem{MU} {\sc D. M\"uller}, {\it Isometries of bi-invariant pseudo-Riemannian metrics on Lie groups},  Geom. Dedicata {\bf 29} (1),  65--96 (1989).
@@ -1370,18 +1158,10 @@ This result is straightforward from the previous Lemma when combining all condit
 		\bibitem{Ra} {\sc  M.S. Raghunathan}, Discrete Subgroups of Lie Groups, Springer Verlag, 1972.
 		
 		\bibitem{Su} {\sc S. Suhr}, {\it Closed geodesics in Lorentzian surfaces},  	Trans. Amer. Math. Soc. {\bf 365}, 1469--1486 (2013).
-	%%	\bibitem{WAR}
-		%\bibitem{HEL} {\sc Helgasson}, {\it COMPLETAR, VER LIBROS}.
-		
-	%	\bibitem{INCLUDE1}{\it falta1}
-		
-	%	\bibitem{INCLUDE2}{\it Jacobson-Morozov}
 		
 	\end{thebibliography}
 	
 	\appendix 
-	%\section{parametros appendice} \label{appendix1}
-	%En la siguiente table se muestran los valores ...
 	
 	
 	
