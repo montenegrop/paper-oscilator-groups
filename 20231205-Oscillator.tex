@@ -1,0 +1,1359 @@
+
+\documentclass[11pt]{amsart}
+\usepackage{amsopn,amsmath,amssymb,amsthm,eucal,url,amscd,amsgen}
+\usepackage{enumerate}
+\usepackage[pagebackref]{hyperref}
+\usepackage[arrow]{xy} %function diagrams
+\usepackage{setspace} %space after section
+\DeclareMathOperator{\sign}{sign} %signo
+
+\usepackage{xfrac} %fracciones diagonals sfrac
+
+\usepackage{nccmath} %centrar ecuaciones
+
+%spacing
+
+\usepackage{enumitem}
+
+%to do sttuff
+\usepackage{xcolor}
+\newcommand\myworries[1]{\textcolor{red}{#1}}
+
+
+%lo incluyo para usar := correctamente
+%\usepackage{mathtools}
+%para valores absolutos
+
+
+%\usepackage[toc,page]{appendix}
+
+%\usepackage{enumitem}
+\makeatletter
+\newcommand{\mylabel}[2]{#2\def\@currentlabel{#2}\label{#1}}
+\makeatother
+
+
+
+ 
+%\documentclass[11pt]{amsart}
+
+ 
+ %\usepackage{amsopn}
+ %\usepackage{amsmath,amsthm,amssymb}
+%\usepackage[hypertex]{hyperref}
+
+ %\usepackage[notcite,notref]
+ %{showkeys}
+ 
+\textwidth 14cm 
+\textheight 20cm
+\oddsidemargin .4in
+\evensidemargin .4in
+
+ \newcommand{\nc}{\newcommand}
+ 
+ \renewcommand{\aa}{\mathfrak{a} } \newcommand\aff{{\mathfrak{aff}}}
+\nc{\bb}{\mathfrak{b} }
+ \nc{\cc}{\mathfrak{c} }  \nc{\dd}{\mathfrak{d} } 
+ \newcommand\ee{{\mathfrak e}}   \nc{\ggo}{\mathfrak{g} }
+ \nc{\hh}{\mathfrak{h} }  \nc{\ii}{\mathfrak{i} }
+ \nc{\jj}{\mathfrak{j} }  \nc{\kk}{\mathfrak{k} }
+\nc{\mm}{\mathfrak{m} }   \nc{\nn}{\mathfrak{n} }
+\nc{\pp}{\mathfrak{p} }   \newcommand\qq{{\mathfrak q}}
+\nc{\rr}{\mathfrak{r} } \nc{\sg}{\mathfrak{s} }
+ \nc{\sso}{\mathfrak{so} }  \nc{\spg}{\mathfrak{sp} }
+ \nc{\ssu}{\mathfrak{su} }  \nc{\ssl}{\mathfrak{sl} }
+ \nc{\tog}{\mathfrak{t} }  \nc{\uu}{\mathfrak{u} }
+ \nc{\vv}{\mathfrak{v} } \nc{\ww}{\mathfrak{w} }
+ \nc{\zz}{\mathfrak{z} }  
+ 
+  \newcommand{\ggam}{G/\Gamma}
+%\renewcommand\AA{{\mathbf A}}
+\nc{\CC}{{\mathbb C}}
+ \nc{\DD}{{\mathbb D}}
+\nc{\FF}{{\mathbb F}}
+\nc{\GG}{{\mathbb G}}  
+\nc{\HH}{{\mathbb H}}
+\nc{\II}{{\mathbb I}}
+\nc{\JJ}{{\mathbb J}}
+\nc{\KK}{{\mathbb K}}
+\nc{\NN}{{\mathbb N}}
+\newcommand\QQ{\mathbb Q}
+\nc{\RR}{{\mathbb R}}  
+ \nc{\ZZ}{{\mathbb Z}}  
+ 
+ \newcommand{\Heis}{\mathrm{H}}
+
+ 
+\nc{\ggob}{\overline{\mathfrak{g}}} 
+ 
+\nc{\glg}{\mathfrak{gl}}
+  
+\nc{\pca}{\mathcal{P}} \nc{\nca}{\mathcal{N}}
+ 
+ \nc{\vp}{\varphi} \nc{\ddt}{\frac{{\rm d}}{{\rm d}t}}
+ \nc{\la}{\langle} \nc{\ra}{\rangle}
+ \nc{\brg}{[\,,\,]_{\ggo}}
+ \nc{\brv}{[\,,\,]_{\vv}}
+ %\nc{\sqb}{{\sqbullet}}
+
+ 
+ \nc{\SO}{{\sf SO}} \nc{\Spe}{{\sf Sp}} \nc{\Sl}{{\sf Sl}}
+ \nc{\SU}{{\sf SU}} \nc{\Or}{{\sf O}} \nc{\U}{{\sf U}}
+ \nc{\Gl}{{\sf Gl}} \nc{\Se}{{\sf S}} \nc{\Cl}{{\sf Cl}}
+ \nc{\Spin}{{\sf Spin}} \nc{\Pin}{{\sf Pin}}
+ 
+ 
+%operadores pablo
+  \nc{\sldr}{\operatorname{SL(2,\R)}}
+  \nc{\sldrt}{\operatorname{\widetilde{SL}(2,\R)}}
+  \nc{\Gamt}{\operatorname{\widetilde{\Gamma}}}
+  \nc{\alpt}{\operatorname{\widetilde{\alpha}}}
+  
+  \nc{\gsldr}{\operatorname{\mathfrak{sl}(2,\R)}}  
+  \nc{\gldr}{\operatorname{GL(2,\R)}} 
+  \nc{\sldz}{\operatorname{SL(2,\Z)}}
+  \nc{\B}{\operatorname{B}}
+  \nc{\oscn}{\operatorname{Osc_n(\lambda_1,...,\lambda_n)}}
+  
+ \nc{\ad}{\operatorname{ad}} \nc{\Ad}{\operatorname{Ad}}
+ \nc{\coad}{\operatorname{coad}} 
+ \nc{\rank}{\operatorname{rank}} \nc{\Irr}{\operatorname{Irr}}
+ \nc{\End}{\operatorname{End}} \nc{\Aut}{\operatorname{Aut}}
+ \nc{\Inn}{\operatorname{Inn}} \nc{\Der}{\operatorname{Der}}
+ \nc{\Ker}{\operatorname{Ker}} \nc{\Iso}{\operatorname{Iso}}
+ \nc{\Le}{\operatorname{L}} \nc{\Fe}{\operatorname{F}}
+\nc{\tr}{\operatorname{tr}}
+ \nc{\dif}{\operatorname{d}} \nc{\sen}{\operatorname{sen}}
+ \nc{\modu}{\operatorname{mod}} \nc{\Ric}{\operatorname{R}}
+ \nc{\Sym}{\operatorname{Sym}} \nc{\sca}{\operatorname{sc}}
+ \nc{\scalar}{{\sf s}} \nc{\grad}{\operatorname{grad}}
+ \nc{\ricci}{\operatorname{r}} \nc{\riccin}{\operatorname{Ric}}
+ \nc{\Lie}{\operatorname{L}} \nc{\ct}{\operatorname{T}}
+
+ \newenvironment{proof1}{\noindent {\textit{Proof of Theorem \ref{connected}:}}}{\hfill $\blacksquare$\bigskip}
+ 
+%\newcommand{\deax}{\frac{\partial}{\partial x}}
+%\newcommand{\deay}{\frac{\partial}{\partial y}}
+%\newcommand{\deaz}{\frac{\partial}{\partial z}}
+%\newcommand{\deat}{\frac{\partial}{\partial t}}
+
+\newcommand{\deax}{\partial_x}
+\newcommand{\deay}{\partial_y}
+\newcommand{\deaz}{\partial_z}
+\newcommand{\deat}{\partial_t}
+
+%%%%%%%%%%%%%%%%%%%% COMANDOS DE VIVI AGREGADOS%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\cen}{\mathfrak{z}(\mathfrak{g})}
+ \newcommand{\rad}{\mathfrak{r}}
+ \newcommand{\sem}{\mathfrak{s}}
+ \newcommand{\meti}{\left\langle}
+ \newcommand{\metd}{\right\rangle}
+\newcommand{\lela}{\left \langle}
+\newcommand{\rira}{\right \rangle}
+\newcommand{\bil}{\lela\,,\,\rira}
+\newcommand{\tf}{\tilde{f}}
+\nc{\mr}{{\mathfrak r}}
+\nc{\ms}{{\mathfrak s}}
+\nc{\mv}{{\mathfrak v}}
+\nc{\lra}{\longrightarrow}
+\nc{\R}{{\mathbb R}} 
+\nc{\Q}{{\mathbb Q}}
+\nc{\Z}{{\mathbb Z}}\newcommand{\mX}{\mathfrak X }
+\newcommand{\mF}{\mathfrak F }
+\newcommand{\mg}{\mathfrak n }
+\newcommand{\mn}{\mathfrak n }
+\newcommand{\mz}{\mathfrak z }
+
+\newcommand{\mh}{\mathfrak h }
+\newcommand{\ma}{\mathfrak a }
+\newcommand{\mgg}{\mathfrak g }
+\newcommand{\mt}{\mathfrak t }
+\newcommand{\mb}{\mathfrak b }
+\newcommand{\ts}{\mathfrak{ts} }
+\newcommand{\bsh}{\backslash}
+
+\nc{\hs}{{G/\Gamma}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \theoremstyle{plain}
+ \newtheorem{thm}{Theorem}[section]
+ \newtheorem{prop}[thm]{Proposition}
+ \newtheorem{cor}[thm]{Corollary}
+ \newtheorem{lem}[thm]{Lemma}
+ 
+ \theoremstyle{definition}
+ \newtheorem{defn}[thm]{Definition}
+ 
+ \theoremstyle{remark}
+ \newtheorem{rem}{Remark}
+ \newtheorem*{rems}{Remarks}
+ \newtheorem{exa}[thm]{Example}
+ \newtheorem{exams}[thm]{Examples}
+ \newtheorem*{nota}{Note}
+ \newtheorem{obs}[thm]{Observations}
+ 
+ \newcommand{\ri}{{\rm (i)}}
+ \newcommand{\rii}{{\rm (ii)}}
+ \newcommand{\riii}{{\rm (iii)}}
+ \newcommand{\riv}{{\rm (iv)}}
+ \newcommand{\rv}{{\rm (v)}}
+ \newcommand{\script}{\scriptstyle}
+ 
+ %=====================================================
+ %\setlength{\textwidth}{15,5cm} \setlength{\evensidemargin}{1cm}
+ %\setlength{\oddsidemargin}{1cm}
+ %=====================================================
+
+ \begin{document}
+	
+	
+	\title[Geodesics and isometries on compact Lorentzian solvmanifolds]{Geodesics and isometries on compact Lorentzian solvmanifolds}
+	
+	\begin{abstract}
+		The aim of this work is the study of geodesics on Lorentzian homogeneous spaces of the form $M=G/\Lambda$, where $G$ is a solvable Lie group endowed with a bi-invariant Lorentzian metric and $\Lambda < G$ is a cocompact lattice.   Conditions to assert closeness of light, time or spacelike geodesics on the compact quotient spaces are given. This study implictly needs  extra information of the lattices in every case. We found conditions to assert that every lightlight geodesic on the quotient space is closed. And more important, this  situation depends only on the lattice. Moreover, even in dimension four, there are examples of compact solvamnifolds for which not every lightlike geodesic is closed. 
+	\end{abstract}
+	
+	\author{P. Montenegro and G. P. Ovando}
+	
+	\let\today\relax  %rpm removes date
+	
+	\thanks{{\it (2000) Mathematics Subject Classification}:  }
+	
+	\thanks{{\it Key words and phrases}: Lorentzian geometry, geodesics, compact solvmanifolds. }
+	
+	\thanks{Partially supported by  }
+	
+	\address{ Departamento de Matem\'atica, ECEN - FCEIA, Universidad Nacional de Rosario.   Pellegrini 250, 2000 Rosario, Santa Fe, Argentina.}
+	
+	\
+	
+	\email{gabriela@fceia.unr.edu.ar}
+	
+	
+	
+	\maketitle
+	
+	
+	
+	
+	\section{Introduction}
+A Lorentzian manifold is a  connected, smooth, finite-dimensional manifold \\ $(M, \la \, , \ \ra)$, together with a Lorentzian metric, i.e. a second-order smooth
+tensor field on $M$ which induces, for every $p\in M$, a bilinear form of index $1$ on the tangent
+space $T_pM$ (cf. e.g. \cite{ON}). The geodesics on $M$ are the smooth curves $\gamma(t)$, satisfying the
+differential equation
+$$\nabla_{\gamma'(t)}\gamma'(t)=0,$$
+where $\nabla$ denotes the Levi-Civita connection for $\gamma$. 	
+	The interest in the study of Lorentzian manifolds relies on the fact that the models of 	space-time in general relativity are four-dimensional Lorentzian manifolds.
+	
+A geodesic for which  $\la \gamma'(t), \gamma'(t)\ra < 0$    is called timelike and it represents the world line of a particle
+	under the action of a gravitational field. While if $\la \gamma'(t), \gamma'(t)\ra = 0$, the geodesic is called lightlike or
+	null, and it represents the world line of a light ray.
+	
+	
+	In \cite{BOV} the authors show families of compact Lorentzian manifolds for which every lightlike geodesic is closed. Motivated from this result, we investigate the situation in higher dimensions and in every lattice. Precisely we take the oscillator groups equipped with a Lorentzian bi-invariant metric and consider discrete subgroups such that the corresponding quotient space is compact.  In this setting Theorem 3.4 shows a condition in the lattice which implies that either every lightlike geodesic in the compact manifolds is closed or there is exactly one direction for which lightlike geodesics is closed and for any other direction is not closed. 
+	
+	To complete the study we determine the existence of closed and open timelike and spacelike geodesics. In Theorem 3.6 we proved that there always exist every kind of such geodesics. 
+	
+	Finally we study isometries in the compact quotients. It was proved in \cite{BG} that the identity component of the isometry group of a pseudo-Riemannian compact space coincides with $G$, whenever $G$ is a solvable Lie group acting by isometries.  We based the study in the results obtained in \cite{Bou} where the isometry groups of the oscillators Lie groups were computed, when considered with a bi-invariant metric. By generalizing results in \cite{BOV} we proceed to compute some of the isometry groups in the compact spaces.  We notice that isometries fixing the identity element in the oscillator groups strictly include the conjugation maps (see Theorem 4.6). However to induce isometries to the quotient spaces one gets  a conjugation by an element of the normalizer of the corresponding lattice (see Proposition 4.11). On the other hand any left-translation will be induced to the quotient. Computations of the normalizer of the lattices are much more complicated in higher dimensions. In the final section we show some examples of those computations. 
+	
+	
+	\section{Lie groups with Lorentzian bi-invariant metrics}\label{preeliminares}
+	In this section one can find an introduction to general  results about Lie groups with bi-invariant Lorentzian metrics. That is, basic notions, features, geodesics and the construction of the induced  homogeneous spaces, by taking a lattice in the Lie group.  
+	
+	Let $G$ denote a (real) Lie group with Lie algebra $\mgg$. 
+	A \textit{bi-invariant} metric on  $G$ is a pseudo-Riemannian metric $\bil$ for which every translation on the left $L_g$ and on the right $R_g$ by elements of the group $g\in G$, are isometries. Thus, the conjugation maps $I_g: G \to G$, $I_g(x)=g^{-1}xg$ are isometries. Thus the diferential of the Adjoint map is a linear isometry on $\mgg$, $d(I_g)_e= Ad(g)$. One has the following equivalences (see Chapter 11 in \cite{ON}):
+	%For such lie group one has the following equivalences (see Chapter 11 in \cite{ON}):
+	\begin{enumerate}\label{[(i)]}
+		\item $\bil$ bi-invariant;
+		\item $\bil$ Ad($G$)-invariant;
+		%\item  the inversion map $g \to g^{-1}$ is an isometry of $G$;
+		\item $\lela [X, Y], Z\rira + \lela Y, [X, Z]\rira= 0$ for all $X, Y, Z \in\mgg$;
+		%\item $\nabla_X Y = \frac12 [X,Y]$ for all $X, Y \in \mgg$, where $\nabla$ denotes the Levi-Civita connection;
+		\item the geodesics of $G$ starting at the identity element $e$ are the one-parameter subgroups of $G$, that is:
+		\begin{equation}\label{onepara}
+			\alpha(t)=\exp(tX), \qquad \mbox{ for }X  \in \mgg, 
+		\end{equation}
+		and the geodesic through $g\in G$ with initial left-invariant vector $X$ is given by the translation of the curve above, that is $g\exp(tX)$. 
+	\end{enumerate}
+	% Geodesics of these groups through the identity can be computed as the so called \textit{one-parameter subgroups} \cite{ON}, that is
+	%\begin{equation}\label{onepara}
+	%\alpha(t)=e^{tX}, X  \in \mgg
+	%\end{equation}
+	%where $\mgg$ is $G$'s Lie algebra.\\
+	If the bi-invariant metric on a Lie group $G$ of dimension $n$ has signature $(1,n-1)$, the metric is called a {\em Lorentzian metric}. Given a vector field  $X$,  it  is called 
+	\begin{itemize}
+		\item {\em spacelike} whenever $\lela X,X \rira >0$;
+		\item {\em timelike} whenever $\lela X,X \rira < 0$;
+		\item {\em lightlike} or {\em null}  if  $\lela X,X \rira = 0$.
+	\end{itemize}
+More generally this is extended to geodesics: 	a geodesic on $G$ with  initial condition $X$, namely $\gamma_X(t)$, is called {\em spacelike, timelike or lightlike} if $X$ is in the respective class above. 
+
+%	The special linear Lie group $\sldr$ consisting of  $2 \times 2$ real matrices with determinant one,  admits a bi-invariant Lorentzian metric. The construction of this metric starts on the Lie algebra of the group, $\gsldr$: identified with the real traceless $2 \times 2$-matrices. Here one can consider the Killing form $B$:
+	
+	
+%	\begin{equation*} \mbox{Let \,\,\,}
+%		X=\left( \begin{array}{ccc}
+%			x_1 & x_2 \\
+%			x_3 & -x_1 \end{array} \right)
+%		,Y=\left( \begin{array}{ccc}
+%			y_1 & y_2 \\
+%			y_3 & -y_1 \end{array} \right) \in \gsldr
+%	\end{equation*}
+%	then
+%	\begin{equation} \label{killing}
+%		\B(X,Y)=4 Tr(X Y)=8x_1y_1+4x_2y_3+4x_3y_2.
+%	\end{equation}
+	
+%	By extending this bilinear form to the group using translations on the left, one obtains a left-invariant metric on the Lie group which is also right-invariant. 
+	
+	
+%	\begin{exa} \label{example1}
+%		{\bf Geodesics on  $\sldr$}.  Let $X \in \gsldr$. An easy 		computation shows that  $X$ is lightlike by satisfying
+		
+%		\smallskip
+		
+%		{\em $\B(X,X)=0$ \quad if and 
+%			only if \quad $X^2 =0$ \quad if and only if \quad $det(X)=0$.}
+		
+%		\smallskip
+		
+%		In fact for any $X\in \gsldr$ of the form
+%			\[ 		X=\left( \begin{matrix} 			x_1 & x_2 \\
+%			x_3 & -x_1 \end{matrix} \right) 
+%		, \qquad \mbox{one has} \qquad X^2=\left( \begin{matrix}
+%			x_1^2+x_2x_3 & 0 \\
+%			0 & x_1^2+x_2x_3 \end{matrix} \right). 
+%		\]
+%	\end{exa}
+	
+%	More generally,  for  any $X\in \gsldr$ one has $B(X,X)=4 Tr(X^2)= 8 (-\det(X))$. 
+%	Thus the geodesics of $\sldr$ starting at the identity and with initial condition $X\in \gsldr$ are the one-parameter subgroups ($I$ denotes the identity matrix):
+%	\begin{eqnarray*}
+%		\cosh(-det(tX))^{1/2} I + \frac{\sinh(-det(tX))^{1/2}}{(-det(tX))^{1/2}}X  \qquad \qquad & \mbox{ if $det(X)<0$}\\
+%		\cos(det(tX))^{1/2} I + \frac{\sin(det(tX))^{1/2}}{(det(tX))^{1/2}}X  \qquad \qquad & \mbox{ if $det(X)>0$}\\
+%		I + tX  \qquad \qquad & \mbox{ if $det(X)=0$,}
+%	\end{eqnarray*}
+%	which correspond to spacelike, timelike and lightlike geodesics respectively, (see Exercises and further results Ch. II in \cite{HEL}). In this work an alternative presentation of geodesics will be used, presentation that is written by using the conjugation by an element $C$ of $\sldr$
+	
+	
+	
+	%\footnote{Making use of  \ref{onepara} one can compute  geodesics of $\sldr$ at the identity. COMPARAR CON EJERCICIO EN HELGASSON PAG. 149}
+	
+%	\begin{prop}\label{sl2r} Let $\sldr$ denote the Lie group equipped with the Lorentzian metric  induced by the  Killing form $\B$. The geodesics starting at the identity 
+		%with initial condition $X\in \gsldr$ 
+%		are curves  defined for every $t\in \RR$ of one of  the following  families:
+%		\begin{eqnarray*}\label{equ1}
+%			\textbf{spacelike}: \qquad \qquad &  C^{-1} \left( \begin{array}{ccc}
+%				\cosh(k t) & \sinh(kt) \\ 
+%				\sinh(kt) & \cosh(kt) \end{array} \right) C,  \qquad & 0 \neq k \in \mathbb{R},\\
+%			\textbf{timelike}:  \qquad \qquad & C^{-1} \left( \begin{array}{ccc}
+%				\cos(k t) & -\sin(kt) \\ 
+%				\sin(kt) & \cos(kt) \end{array} \right) C,  \qquad   &% 0 \neq k \in \mathbb{R},\\
+%			\textbf{lightlike:}  \qquad \qquad &  \qquad \quad \left( \begin{array}{ccc}
+%				1+x_1 t & x_2t \\
+%				x_3t & 1-x_1t \end{array} \right),  \qquad \qquad & x_1^2+x_2x_3 = 0,
+%		\end{eqnarray*}
+%		for any $ \, C \in \sldr$. \end{prop}
+	
+%	\begin{proof}
+%		Since geodesics at the identity are  one-parameter subgroups,  a geodesic starting at the identity $\gamma_X(t)$ is given by  the usual exponential of matrices.
+		
+%		Take as initial condition of the geodesic, a general element $X\in \gsldr$ of the form 
+%		$X=\left( \begin{array}{ccc}
+%			x_1 & x_2 \\
+%			x_3 & -x_1 \end{array} \right) \in \gsldr$. 
+		
+%		\begin{itemize}
+%			\item Assume $X$ is a lightlike vector. As seen in Example \ref{example1}, one has  $X^2=0$ and  therefore the geodesic $\gamma_X(t)$ is given by $\gamma_X(t)=Id+tX$,  which gives the respective expression in Equation \eqref{eq1}.
+			
+%			\item Consider now the timelike vector $M_k= \left( \begin{array}{ccc}
+%				0 & -k \\
+%				k & 0 \end{array} \right)$, where $k$ is a non-zero real constant. Usual computations   give
+%			$$e^{tM_k}=\left( \begin{array}{ccc}
+%				cos(k t) & -sen(kt) \\ 
+%				sen(kt) & cos(kt) \end{array} \right),$$ which are timelike geodesics for any $k\in \R-\{0\}$. Moreover, since translations on the left and on the right are isometries, for any $C \in \sldr$, a curve of the form 
+%			$$C^{-1} \left( \begin{array}{ccc}
+%				cos(k t) & -sen(kt) \\ 
+%				sen(kt) & cos(kt) \end{array} \right) C$$ is also a timelike geodesic through the identity. The claim is that every timelike geodesic starting at the identity is of this form.
+			
+%			In fact, let $X \in \gsldr$ be any timelike vector field. Clearly $\det(X)> 0$. Note that $e^{tX}=C^{-1} e^{tM_k} C$ comes as a consequence of taking the exponential whenever   
+%			$X = C^{-1} M_k C$. Thus, one needs to verify that there exist $k\in \R-\{0\}$ and $C\in \sldr$ such that 
+%			\begin{equation}
+%				X = C^{-1} M_k C\qquad \mbox{ equivalently } \qquad CX = M_k C.
+%			\end{equation} 
+			
+%			Notice that $k^2 = det (X)$. In order to solve $CX = M_k C$ for $k$ and $C$, let $M_1=\left( \begin{array}{ccc}
+%				0 & -1 \\ 
+%				1 & 0 \end{array} \right)$ and noticed that $M_k=kM_1$ where $k$ is chosen by satisfying $k^2 = det (X)$. Now  the equation  $C X - k M_1 C = 0$ is a linear system in the entries of $C$: $(c_1,c_2,c_3,c_4)$, where $C = \left( \begin{array}{ccc}
+%				c_1 & c_2 \\ 
+%				c_3 & c_4 \end{array} \right)\in \sldr $. Thus finding solutions of $C X=kM_1C$ is equivalent to find solutions of the following system:			
+%			\begin{equation}\label{equ2}
+%				\left( \begin{matrix}
+%					x_1 & x_3  & k & 0 \\
+%					x_2 & -x_1  & 0 & k \\
+%					-k & 0  & x_1 & x_3 \\
+%					0 & -k  & x_2 & -x_1 
+%				\end{matrix} \right)
+%				\left( \begin{matrix}
+%					c_1 \\
+%					c_2 \\
+%					c_3 \\
+%					c_4
+%				\end{matrix} \right)=
+%				\left( \begin{matrix}
+%					0 \\
+%					0 \\
+%					0 \\
+%					0
+%				\end{matrix} \right). 
+%			\end{equation}
+%			Since  $k\neq 0$ satisfies  $k^2=det(X)$, the resulting solution  space to Equation \ref{eq2} is given by $C$ with entries 
+%		\begin{equation}\label{C}
+%			C=\left( \begin{matrix}
+%				u \frac{x_1}{k}+v\frac{x_3}{k} & u%\frac{x_2}{k}-v\frac{x_1}{k}\\
+%				u & v 
+%				\end{matrix} \right):u,v \in \R.\end{equation}
+%			The solutions have determinant  equals $1$ whenever 
+%			
+%			\begin{equation}\label{determinanteq}
+%						2u v x_1 + v^2 x_3-u^2 x_2 -k=0.
+%		\end{equation} 
+%	Choose $k$ such that $k^2=det(X)$ and  $x_2k < 0$. Thus, the equation above has real solutions $u,v$ (here  start by thinking the equation above by fixing $v$ and solving the quadratic equation for $u$). 	
+	%	For any $k<0$ such that $det(X)=k^2$, there exist real solutions $u,v$  whenever $v^2 > -x_2$, which is always possible. 
+			
+			% When a solution $(a,b,c,d)$ has positive determinant $m$ one can simply divide the solution by the square root of its determinant and the new matrix $C=\frac{1}{\sqrt{m}}(a,b,c,d)$ will be an element of $SL(2,\RR)$.\\
+			
+%			\item For the spacelike case, the reasoning is analogous to that one given in the timelike case. Firstly consider the spacelike vectors $P_k=k \left( \begin{array}{ccc}
+%				0 & 1 \\
+%				1 & 0 \end{array} \right)$, $k \neq 0$, which produce the next family of spacelike geodesics starting at the idenity
+%			$$e^{tP_k}=\left( \begin{array}{ccc}
+%				cosh(k t) & senh(kt) \\ 
+%				senh(kt) & cosh(kt) \end{array} \right), $$
+%			and one also has the family of geodesics 
+%			$$C^{-1} \left( \begin{array}{ccc}
+%				cosh(k t) & senh(kt) \\ 
+%				senh(kt) & cosh(kt) \end{array} \right) C,$$
+%			for any $C \in \sldr$.
+			
+%			To prove that every spacetime geodesic starting at the identity can be written as  above,  one needs to prove that there exist  $0 \neq k \in \RR$ and $C \in \sldr$ such that   $X = C^{-1} P_k C$ where $X$ is a spacelike vector (therefore $\det(X)< 0$). Clearly it holds  $det(X)=-k^2$. Thus the equation 
+%			$C X - P_k C = 0$ has a solution if and only if the following linear system has a non-trivial solution $C=(c_1,c_2,c_3,c_4)$:
+%			\[\left( \begin{matrix}
+%				x_1 & x_3  & -k & 0 \\
+%				x_2 & -x_1  & 0 & -k \\
+%				-k & 0  & x_1 & x_3 \\
+%				0 & -k  & x_2 & -x_1 
+%			\end{matrix} \right)
+%			\left( \begin{matrix}
+%				c_1 \\
+%				c_2 \\
+%				c_3 \\
+%				c_4
+%			\end{matrix} \right)=
+%			\left( \begin{matrix}
+%				0 \\
+%				0 \\
+%				0 \\
+%				0
+%			\end{matrix} \right),
+%			\]
+%			and with $C\in \sldr$. Usual computations show that the solution space is given by the set of matrices $C$, whose entries satisfy Equation \eqref{C}. Thus, $C$ belongs to $\sldr$ if and only if Equation \eqref{determinanteq} holds. In this case, choose $k$ such that  $det(X)=-k^2$, and one gets solutions if $v^2 \geq x_2/k$. 
+			
+			%$\Bigl\{ \big( u \frac{x_1}{k}+v\frac{x_3}{k},u\frac{x_2}{k}-v\frac{x_1}{k},u,v \Big):u,v \in \R \Bigr\}$
+			
+		%	when choosing $k$ such that $k^2=-det(X)$. Applying the same/ technique that was applied in the timelike case it can be shown that this nullspace contains elements of $\sldr$.
+%		\end{itemize}
+%	\end{proof}
+	
+	
+%	Note that $\sldr$ is {\em complete} in the sense that geodesics are defined on $\RR$. 
+	
+%	\smallskip
+	
+	Examples of Lie groups with bi-invariant Lorentzian metrics arise from the so called  \textit{oscillator groups}. Denoted by $\oscn$, an oscillator Lie group is the simply connected Lie group with real Lie algebra of dimension $2n+2$, namely $\mathfrak{osc}_n(\lambda_1,...,\lambda_n)$, with $\lambda_i\in \R_{>0}$. This Lie algebra is  spanned by the basis $Z$,$\{X_i,Y_i\}_{i=1}^n$, $T$ satisfying the non-trivial Lie bracket relations
+	\[ [X_i,Y_i]=Z, \quad [T, X_i]=\lambda_i Y_i, \quad  [T, Y_i]=- \lambda_i X_i.  \]
+Denote by $\lela\,,\, \rira$  the ad-invariant  metric on $\mathfrak{osc}_n(\lambda_1,...,\lambda_n)$ with  the non-zero relations
+	\[ \lambda_i \lela X_i,X_i \rira  = \lambda_i \lela Y_i,Y_i \rira = \lela Z,T  \rira  = 1.\]
+	
+	%These groups are the only connected, simply connected, non-abelian solvable groups which admit such metric \cite{Me,MeRe}. 
+	The oscillator Lie groups   have the differential structure of $\R \times \R^{2n} \times \R$ with the following group product
+	\begin{equation*}
+		(z_1,v_1,t_1) . (z_2,v_2,t_2)=(z_1+z_2+\frac{1}{2}v_1^{\tau}J R(t_1)v_2,v_1+R(t_1)v_2,t_1+t_2),
+	\end{equation*}
+	\[\text{where \,  } 
+	%
+	R(t_1)= e^{t_1 N_{\lambda}}, \, N_\lambda=\left( \begin{matrix}
+		J_{\lambda_1} &  & \mathbf{0} \\
+		& \ddots & \\
+		\mathbf{0} & & J_{\lambda_n}
+	\end{matrix} \right),\, 
+	%
+	J_{\lambda_i}=\left( \begin{matrix}
+		0 & -\lambda_i \\
+		\lambda_i & 0
+	\end{matrix} \right), \, J = N_{(-1, \hdots, -1)}.
+	\]
+	
+	for $v_1, v_2\in \RR^{2n}$. By $v^{\tau}$ we denote the transpose of $v$. 
+	Take the corresponding left-invariant metric on the Lie group, which for usual  coordinates for $i=1, \hdots, n$: $z, x_i,y_i, t$ in $\R^{2n+2}$  can be written as
+	\begin{equation}\label{metricosc}
+		g=dt (dz +\sum_{j=1}^{n} y_j dx_j+ x_j dy_j) +\sum_{j=1}^{n}\frac1{\lambda_j}(dx_j^2+dy_j^2).
+	\end{equation}
+	
+	The Christoffel symbols corresponding to the metric above follow
+	
+	\[ \Gamma^1_{2n+2 \,\, 2i}=-\frac{x_{i} \lambda_{i}}{4} \quad \Gamma^1_{2n+2 \,\, 2i+1}=-\frac{y_{i} \lambda_{i}}{4}, \quad i=1,..., n \]
+	
+	\[ \Gamma^{2i}_{2n+2 \,\, 2i}=\frac{\lambda_i}{2} \quad \Gamma^{2i+1}_{2n+2 \,\, 2i}=-\frac{\lambda_i}{2}, \quad i=1,..., n \]
+	
+	being the others trivial and following  symmetry relations. 
+	
+	The resulting equations for the geodesics can be written in the usual  coordinates of $\RR^{2n}$ as:
+	\begin{equation}\label{geodcomp}
+		\begin{array}{rcl}
+			z''(s)&= & \frac{ t'(s)}{2}\sum_{k=1}^{n}  \lambda_k \left( x_k'(s) x_k(s)+y_k'(s) y_k(s) \right) \\ \vspace{.2cm}
+			x_i''(s)&=&-\lambda_i y_i'(s) t'(s),\\ \vspace{.2cm}
+			y_i''(s)&=&\lambda_i x_i'(s) t'(s),\\ \vspace{.2cm}
+			t''(s)&=&0,
+		\end{array}
+	\end{equation}
+		which follows from the general geodesic equation, $\frac{d^2 \gamma^k}{d t^2} + \sum_{i,j} \Gamma^k_{i j}(\gamma) \frac{d \gamma^i}{dt} \frac{d \gamma^j}{dt} = 0$ (see \cite{ON}).
+	
+	
+	
+	In particular, those geodesic starting at the identity element $(z(s), (x_j(s),y_j(s)),t(s))$, $j=1, \hdots n$ with initial condition $X =  d \ Z + \sum_j (b_j X_j + c_j Y_j) + a T$ are:
+	
+	\begin{itemize}
+		\item for $a \neq 0$:
+			\begin{eqnarray} \label{geo_osc_1}
+			z(s)&= & \left(d + \frac{1}{2 a} \sum_{k=1}^{n} \frac{ b_{k}^{2}+c_k^{2}}{\lambda_k}\right)s- \frac{1}{2 a^{2}} \left(  \sum_{k=1}^{n} \frac{b_{j}^{2}+c_j^2}{\lambda_k^{2}} \sin(\lambda_k a s) \right),\\
+			x_j(s)&=&  \frac{1}{a \lambda_j} \left(   {b_j}sin(\lambda_j a s)+{c_j}cos(\lambda_j a s)-{c_j} \right),\\
+			y_j(s)&=&  \frac{1}{a \lambda_j}  \left(    -{b_j}cos(\lambda_j a s)+{c_j} sin(\lambda_j a s)+{b_j} \right),\\ 
+			t(s)&=&a s,
+		\end{eqnarray}
+		\item while for $a=0$:
+		\begin{equation}\label{geo2}
+			(z,(x_j,y_j),t)(s)=(ds,(b_j s,c_j s),0). 
+		\end{equation}
+		
+	\end{itemize}
+	
+	It is not hard to check that for the initial velocity $X \in \mathfrak{osc}_n(\lambda_1,...,\lambda_n)$ as above, the corresponding geodesic is:
+	\begin{itemize}
+		\item lightlike if $2 a d + \sum_{k=1}^{n} \frac{b_k^2+c_k^2}{\lambda_k} = 0$,
+		\item timelike if $2 a d + \sum_{k=1}^{n} \frac{b_k^2+c_k^2}{\lambda_k} < 0$, 
+		\item or spacelike if $2 a d + \sum_{k=1}^{n} \frac{b_k^2+c_k^2}{\lambda_k} > 0$.
+	\end{itemize}
+	
+	Note that the oscillator  Lie groups are also complete spaces. 
+	
+	\smallskip
+	
+	\begin{rem} Medina and Revoy  in \cite{Me,MeRe} proved that the Lie algebras $\mathfrak{osc}_n(\lambda_1,...,\lambda_n)$ ($\lambda_i > 0$) and $\gsldr$ are the only indecomposable ones admitting a Lorentzian ad-invariant metric. Recall that a Lie algebra provided with a metric is called \textbf{indecomposable} if the restriction of the metric to any proper ideal is degenerate. 
+	\end{rem}
+	
+	
+	\subsection{Quotient spaces} 
+	%tal vez citar a otro, o al de internet Rory Biggs.
+	
+	
+	
+Let $G$ denote a Lie group and let  $\Gamma\subset G$ be a discrete cocompact subgroup. 	The quotient space $M=G/\Gamma$ consists of elements of the form $g\Gamma$ with $g \in G$. Since $\Gamma$ is closed, there exists a unique manifold structure on $M$ for which the canonical projection $g \mapsto g\Gamma$ is a smooth submersion (see \cite{Hel}). Finally, the geometry of $M$ is provided by requiring the projection, named $\pi$, to be a local isometry. Whenever the Lie group  $G$ is provided with a Lorentzian metric, $(G,\pi)$ is called  a \textit{Lorentzian covering}.
+	
+	
+	
+Assume $G$ is equipped with a bi-invariant metric. It follows  that the geodesics of $M$ starting at $o:=\pi(e)$ are of the form $\hat{\alpha}=\pi(\alpha(t))$, where $\alpha$ is a one parameter subgroup of $G$ (see \cite{ON}). In addition to this, $G$ acts on $M$ by the "translations on the left" which are isometries:
+	
+	\begin{eqnarray*}
+		\tau_g : M \rightarrow M\qquad \mbox{given by} \quad 
+		\tau_g(h\Gamma):=gh\Gamma,
+	\end{eqnarray*}
+	by  showing that $M=G/\Gamma$ is a homogeneous space. 
+	
+One can notice that: 
+	
+	\begin{enumerate}
+		\item A geodesic of $G/\Gamma$ starting at $g\Gamma$ is the translation via $\tau_g$ of some geodesic starting at $o$. \label{punto1}
+		\item Every geodesic in $G/\Gamma$ is the projection via $\pi$ of some geodesic in $G$.\label{punto2}
+		\item Lighlike, timelike and spacelike geodesics of $G$ project to lightlike, timelike and spacelike geodesics of $M$ respectively.
+	\end{enumerate}
+	
+	%discusion sobre geodesicas cerradas
+%	Thus a geodesic on $G/\Gamma$ starting at $o$ has the form $\pi\circ \alpha$ where $\alpha$ is a geodesic on $G$ starting at the identity element. To get the geodesic starting at $\pi(g)$ with $g\in G$ one applies $\tau(g)\pi\circ \alpha$.  
+	
+	Note that $\pi \circ L_g = \tau_g \pi$ and one gets $\tau(g)\pi\circ \alpha=\pi\circ L_g \circ \alpha$ for a curve $\alpha:(a,b)\to G$ starting at the identity element  $e\in G$. 
+	
+	%\textbf{About closed geodesics}.
+	 A curve $\beta:(a,b)\to G$ (or to $M$) is said {\em closed } when it passes through a same point more than once, that is, there exist $t_2\neq  t_1$ such that $\beta(t_1)=\beta(t_2)$. %\pi(g\alpha)(t_1)=\pi(g\alpha)(t_2)$.. It is not hard to see that 
+	\begin{enumerate}
+		\setcounter{enumi}{3}
+	%	\item Any geodesic of $M$ has the form $\pi(g\alpha)$, where $g \in G$ and $\alpha$ is a geodesic of $G$ such that $\alpha(0)=e$. 
+		
+		\item A geodesic $\alpha: (-\varepsilon, \varepsilon) \to G$, with $\varepsilon>0$ and   $\alpha(0)=e$   giving rise the the curve $\pi\circ \alpha$ in $M$  is closed in $M$, if and only if  $\alpha(t) \in \Gamma$ for some $t>0$.\label{punto4}
+	\end{enumerate}
+%	This follows by observing that $\pi(e)=\pi(\gamma)$ for every $\gamma \in \Gamma$. 
+	In particular the projection of a closed geodesic in $G$ is always a closed curve in $M$.
+	
+
+	
+	A final result for closed geodesics comes from the following lemma, which, when combined with item (\ref{punto4}) states that every closed geodesic in the quotient manifold is actually a periodic curve. 
+	
+	\begin{lem}\cite{BOV}  Let $G$ be a Lie group, let $K < G$ be any closed Lie  subgroup of $G$ such that  $\pi: G \to G/K$ denotes the 
+		usual projection. Let $\alpha: \RR \to G$ denote a  one-parameter subgroup of $G$.
+		If $\pi \circ \alpha$ is closed in $G/K$ then it is periodic.
+	\end{lem}
+	
+	%
+	
+	%\begin{defn}\label{indecomposable}
+	%Let $(G,\langle ,\rangle)$ be a Lie group with a bi-invariant metric, then its Lie algebra is called \textbf{indecomposable Lie algebra} if for any $I \subset \mgg$ proper ideal $\langle \, ,\rangle_e |_I$ is degenerate.
+	%\end{defn}
+	
+	
+	%\begin{thm}\label{med1} \ref{med1}
+	%Let $G$ be a connected Lie group. If $G$ is provided of a bi-invariant Lorentzian metric for which it is indecomposable, then $G$ is simple and its Killing form has index $1$, or its universal cover is isomorphic to an oscillator group
+	%\end{thm}
+	
+	%It follows that the only \cite{OV2} simply connected groups arising from the last theorem are $\widetilde{SL}(2,\mathbb{R})$ with the metric generated by its Killing form and the Oscilator groups $Osc_n(\lambda_1,...,\lambda_n)$ with the metric described earlier.
+	
+	% \footnote{\myworries{Se podr\'ia explicar por que estas so las \'unicas m\'etricas, tambi\'en explicar que es un latice cocompacto cerca del final.}}
+	
+	
+%	In the following paragraphs the results discussed above are applied for quotient spaces $G/\Gamma$, where $G=\sldrt, \sldr$ or $\oscn$ (in the next section) and $\Gamma$ is any lattice in $G$, that is a cocompact discrete subgroup. 
+	
+	
+
+	
+	\section{The solvmanifolds from the Oscillator groups}\label{sectionosc}
+	
+	This section is concerned with the study of geodesics of Lorentian compact spaces  $$M=\oscn/ \Gamma,$$ where $\Gamma$ is a cocompact lattice in $\oscn$. The following results shows a condition to construct such lattices. 
+	
+	\begin{lem}\cite{MeRe}\label{lema_medina}
+		An oscillator group $\oscn$ admits a lattice if and only if the numbers $\lambda_j$ generate an additive discrete subgroup of $\R$.
+	\end{lem}
+	
+	In the demonstration of the previous lemma it is  shown that for a lattice $\Gamma$, the set $\mathrm{T}(\Gamma):=\{ t \in \R : (z,u,t) \in \Gamma \}$ is an additive discrete subgroup of $\RR$. %, also shown in \cite{MF}, page 93.
+	 Let $t_0$ denote the positive generator of $\mathrm{T}(\Gamma)$. 
+	
+	Notice that for $(w,b,0) \in \Gamma$, the set of elements in the lattice
+	\begin{equation*}
+		\{ (z,u,t_0)^n.(w,b,0).(z,u,t_0)^{-n}=(w,e^{n t_0 N_{\lambda}}b,0) : n \in \mathbb{N} \}
+	\end{equation*}
+	 is a finite set, since they are elements of a discrete cocompact lattice. Furthermore there is a smaller positive integer $K_0$ such that $e^{K_0 t_0 N_{\lambda}} = Id$. In particular it follows that $t_0$ satisfies
+	\begin{equation} \label{oscilator-N}
+		t_0=\frac{2 \pi k_i}{\mathrm{K_0} \lambda_i},
+	\end{equation}
+	for some integers $k_i$ with $i=1, ..., n$.\\
+	
+	In \cite{MF}, Fischer introduced a family of Lie groups named $Osc_n(\omega_r, B_r)$ defined by an element $r \in \mathbb{N}^n$ such that $r_i | r_{i+1}$. Denote by $\omega_r(u,v):=u^TN_{-r}v$ the symplectic form on $\R^{2n}$ and by $B_r \in GL(2n, \R)$ the linear transformation satisfying
+	
+	\begin{itemize}
+		\item $\omega_r(B_r.,.)$ is symmetric and negative definite
+		\item $e^{B_r} \in SL(2n,\Z)$.
+	\end{itemize}
+	
+	The group operation for $Osc_n(\omega_r, B_r)$ with base on the manifold $\R \oplus \R^{2n} \oplus \R$ is given by
+	
+	\begin{equation}
+		(z_1,v_1,t_1) . (z_2,v_2,t_2)=(z_1+z_2+\frac{1}{2}v_1^{T}N_{-r} e^{t_1 B_r}v_2,v_1+e^{t_1 B_r}v_2,t_1+t_2).
+	\end{equation}
+	
+	Let $L(\xi_0)$ be the subgroups generated by $$\{ (1,0,0),(0,e_i,0),(0,\xi_0, 1) \}$$ where $\xi_0$ is an element in $\R^{2n}$ such that the above subgroup is a lattice. 
+	
+%	In each of these groups the author defines the subgroups generated by $$\{ (1,0,0),(0,e_i,0),(0,\xi_0, 1) \}$$ and if $\xi_0$ is such that the latter produce a lattice then subgroup is called $L(\xi_0)$. 
+In particular, according to Example 3.1 of \cite{MF}, the element $\xi_0$ verifies the following condition 
+	\begin{equation}\label{xi-condition}
+		(\omega_r(\xi_0, e^{B_r}e_i), e^{B_r} e_i, 0) \in \,\, <\{ (1,0,0),(0,e_i,0) \}>
+	\end{equation}
+	
+	
+	These lattices $L(\xi_0)$ of $Osc_n(w_r, B_r)$ can be associated to lattices of $\oscn$. In fact, for every lattice $\Gamma$ of $\oscn$ there exists a group $Osc_n(\omega_r, B_r)$, $\xi_0 \in \R^{2n}$ and an isomorphism $\Phi: \oscn \rightarrow Osc_n(\omega_r, B_r)$ such that $\Phi(\Gamma) = L(\xi_0)$ (see Theorem 5 of \cite{MF}). 	
+	The explicit definition of $\Phi$ can be found in the proof of the mentioned theorem. The following property of this isomorphism holds:
+	
+	\begin{equation} \label{condition-exp}
+		\Phi^{-1}(z,0,t) = (w z, 0, \widetilde{t_0} t ) \mbox{ whenever } e^{t B_r} = Id,
+		\end{equation}
+    where $\widetilde{t_0}$ is either $\frac{1}{t_0}$ or $-\frac{1}{t_0}$.
+
+	Additionally it is shown that $B_r := \pm t_0 S N_{\lambda} S^{-1}$ \footnote{this follows noticing that $\oscn = Osc_n(w_{1}, N_{\lambda})$.}, for some invertible matrix $S$. 
+	
+	\begin{lem}\cite{MF}\label{oscilador-elementos}  %dar idea demostracion
+		Let $\Gamma$ be any lattice of $\oscn$. Then:
+		\begin{enumerate}
+			\item there always exists \,\,\, $w \neq 0 \in \R$ such that $(w,0,0) \in \Gamma$.
+			\item if $\Gamma$ is such that $t_0 = \frac{2 \pi k_i}{\lambda_i}$ for positive integers $k_i$ then there exists an element in $\Gamma$ of the form $\gamma = (z, 0, t)$ where $z$ and $t$ are non-zero.
+		\end{enumerate}
+	\end{lem} 
+	
+	\begin{proof}
+		
+		Since $\Gamma = \Phi^{-1}(L(\xi_0))$, then $\Phi^{-1}(1,0,0) = (w,0,0) \in \Gamma$, according to (\ref{condition-exp}), with $w \neq 0 $; this proves the first part of the lemma.
+		
+		The second part is proved noticing first that the condition $t_0 = \frac{2 \pi k_i}{\lambda_i}$ corresponds to lattices such that $e^{tN_\lambda} = Id$ for any $t \in \mathrm{T}(\Gamma)$, therefore $$e^{B_r} = Se^{t_0N_\lambda}S^{-1}=Id.$$
+		
+		The latter equation, together with the fact that $r_i | r_{i+1}$ applied in Condition (\ref{xi-condition}) gives the following property: $$\xi_0=(\frac{z_1}{r_1},\frac{z_2}{r_1}, \frac{z_3}{r_1 k_2}, \frac{z_4}{r_1 k_2}, ..., \frac{z_{2n-1}}{r_1 k_2 k_3 ... k_n}, \frac{z_{2n}}{r_1 k_2 k_3 ... k_n} ), \quad \mbox{for some } z_i \in \mathbb{N},$$ and it can be verified that $$(0,\xi_0,1)^{r_1 k_2 k_3 ... k_n} \in \Q \times \Z^{2n+1}. $$
+		
+		Since the $2n$ middle components of the result are integers, it can be multiplied conveniently by $(0, \pm e_i, 0) \in L(\xi_0)$ to obtain $(q_1, 0, t_1) \in \Gamma$, for some $q_x \in \Q$. Then for some integer $y_1$, $(q_1, 0, t_1)^{y_1} = (y_1 q_1, 0, y_1 t_1) \in \Z^{2n+1}$. 
+		
+		Finally, since $(\pm 1,0,0) L(\xi_0)$, after convenient multiplications one can construct an element $(1,0,k)$ of $L(\xi_0)$ such that, $\Phi^{-1}(1,0,k) = (w,0,\widetilde{t_0} k)$. 
+		\end{proof}
+	
+	
+	\begin{obs}\label{obs-osc}
+		Let $\Gamma$ be a lattice of the oscillator group $\oscn$ with $t_0=\frac{2\pi k_i}{\mathrm{K_0} \lambda_i}$ as in Equation \eqref{oscilator-N}, notice that:
+		\begin{itemize}
+			\item The lightlike geodesics in $\oscn$ with $a=0$ \eqref{geo2}, verify $b_j=c_j=0$ for all $j=1,...,n$. Consequently, they take the form $ \alpha_d(s)=(ds,0,0)$ and intersect $\Gamma$ because there exists $w > 0$ $(w,0,0) \in \Gamma$ according to last Lemma. This means that  $\alpha(\tilde{s})=(w,0,0)$ for some $\tilde{s} > 0$.
+			\item The lightlike geodesics with $a \neq 0$ verify $\alpha(\frac{\mathrm{K_0} t_0}{a}) = (0,0,\mathrm{K_0} t_0)$, see Expressions \eqref{geo_osc_1}. If $\Gamma$ contains an element of the form $(0,0,\hat{t})$ with $\hat{t}=p t_0$ for some $p \in \mathbb{Z}$, then $$\alpha(p \mathrm{K_0} t_0) = (\alpha(\mathrm{K_0} t_0))^p = (0,0,\hat{t})^p \in \Gamma.$$ 
+		\end{itemize}
+	\end{obs}	
+		
+		\begin{thm}\label{teoremaoscilador}
+			Let $\Gamma$ be a cocompact lattice of $\oscn$, and consider the compact Lorentzian manifold $M=\oscn/\Gamma$, then only one of the following situations occurs
+			\begin{itemize}
+				\item either $\Gamma$ contains an element of the form $(0,0,t_0),$ for some $t_0\in \RR, t_0 \neq 0$ and in this situation every lightlike geodesic of $M$ is closed;
+				\item or, for any $t \neq 0$, one has $(0,0,t) \notin \Gamma$. In this case,   at every point in $M$ there is exactly one direction for which all lightlike geodesics of $M$ are closed and for any other direction they are non-closed. This direction is spanned by $Z \in \mathfrak{osc}_n(\lambda_1, ..., \lambda_n)$.		
+			\end{itemize}
+			
+		\end{thm}
+		
+		\begin{proof}
+			Recall that it suffices to study the geodesics starting at $o:=\pi(e)$ and that every geodesic $\hat{\alpha}$ is the projection of some geodesic, $\alpha$, on $\oscn$: $\hat{\alpha}=\pi(\alpha)$ with $\alpha(0)=e$. Also, $\hat{\alpha}$ is closed in $M$ if $\alpha(s) \in \Gamma$ for some $s>0$.\\
+			
+			As observed in \ref{obs-osc}, all lightlike geodesics of the form $\pi((ds,0,0))$ are closed in $M$, and so geodesics with the same this direction will always be closed. Therefore, to prove the theorem it must be that all the other lightlike geodesics are either closed or non-closed.
+			
+			Let $\alpha$ be a lightlike geodesic with another direction, and suppose it is closed, this means that there exists some $\gamma=(z,u,t) \in \Gamma$ for which $\alpha(s)=\gamma$ for some $s>0$. Since the curve $\alpha$ is a one-parameter subgroup of $\oscn$, then for any integer $m$: $\alpha(m s)=\gamma^m$, which is an element of $\Gamma$. Recall also that since $t \in \mathrm{T}(\Gamma)$ it is of the form $r t_0$ for some integer $r$ and $t_0=\frac{2 \pi k_i}{K_0 \lambda_i}$. Finally, since $s=\frac{t}{a}$, one can compute that $\gamma^{K_0} = \alpha(K_0 \frac{t}{a}) = (0,0,K_0 t) = (0,0,K_0 r t_0)$, and therefore, since $K_0 r$ is an integer, this element is in the lattice and every lightlike geodesic of $M$ is closed.
+			
+			In conclusion, when an element of the form $(0,0,k t_0)$ is in the lattice every lightlike geodesic of $M$ is closed, otherwise only $\hat{\alpha}_d(s)=\pi(ds,0,0)$ are closed, for geodesics at $\pi(e)$.			
+		\end{proof}
+		
+		
+		
+		\begin{exa}\label{Lattice4} Both situations stated in the above theorem are possible. Take for instance the three families of cocompact lattices constructed in \cite{BOV} for  $Osc_1(1)$,
+			\begin{eqnarray*} \label{geodlight}
+				\Lambda_{n,0}&=&\frac{1}{2n}\Z \times \Z \times \Z \times 2 \pi \Z,\\
+				\Lambda_{n,\pi}&=&\frac{1}{2n}\Z \times \Z \times \Z \times \pi \Z,\\
+				\Lambda_{n,\frac{\pi}{2}}&=&\frac{1}{2n}\Z \times \Z \times \Z \times \frac{\pi}{2} \Z,
+			\end{eqnarray*}
+			where $n \in \mathbb{N}$, for which the authors proved that all lightlike geodesics of $M_{n,0}=Osc_1(1)/\Lambda_{n,0}, M_{n,\pi}=Osc_1(1)/\Lambda_{n,\pi}$ and $M_{n,\pi/2}=Osc_1(1)/\Lambda_{n,\pi/2}$ are closed. However other  lattices can be obtained by noticing that
+			\begin{eqnarray*}
+				\phi_m &:& Osc_1(1) \rightarrow Osc_1(1)\\
+				\phi_m(z,x,y,t)&=&(z+mt,x,y,t) \textrm{,    $m \in \R$}
+			\end{eqnarray*}
+			are  automorphisms of $Osc_1(1)$. So, the  lattices $\phi(\Lambda_{n,\bullet})$ most likely do not contain an element of the form $(0,0, t)$. For example, given an integer $p \neq 0$, the lattice $\phi_p(\Lambda_n,0)$ does not contain such element since $\frac{a}{2 n}+ p \, 2 \pi b = 0$ has no solution for integers $a,b$. Thus, for these lattices not every lightlike geodesic is closed. \\
+			
+		\end{exa}
+		
+		
+		To  study  timelike and spacelike geodesics of the commpact spaces, one needs to  consider the geodesics on $\oscn$ starting at the identity element as in (\ref{geo_osc_1}).
+		
+		 Let  $(d,b_j,c_j,a)\in \mathfrak{osc}_n$ be the initial velocity of a geodesic where $a\neq0$ and let $\hat{\gamma}=(\hat{z}, \hat{\eta}, \hat{t})$ be an element of the lattice $\Gamma$. Assume that $\alpha(\hat{t}/a)=\gamma$ with $\hat{t}/a > 0$. In this situation, Equations (ver) traduce into
+		
+		\begin{equation}\label{oscilador_geos_1}
+			\left( \begin{matrix}
+				\sin{\lambda_j \hat{t}} & \cos{\lambda_j \hat{t}} -1 \\
+				1 - \cos{\lambda_j \hat{t}} & \sin{\lambda_j \hat{t}} \\
+			\end{matrix} \right)
+			\left( \begin{matrix}
+				b_j \\
+				c_j \\
+			\end{matrix} \right)=
+			\left( \begin{matrix}
+				\hat{b_j} \\
+				\hat{c_j}
+			\end{matrix} \right).
+		\end{equation}
+		
+		\begin{equation}\label{oscilador_geos_2}
+			\hat{z} =  \left(d + \frac{1}{2 a} \sum_{k=1}^{n} \frac{ b_{k}^{2}+c_k^{2}}{\lambda_k}\right)\frac{\hat{t}}{a}- \frac{1}{2 a^{2}}  \sum_{k=1}^{n} \frac{b_{j}^{2}+c_j^2}{\lambda_k^{2}} \sin(\lambda_k \hat{t}).
+		\end{equation}
+		
+		These expressions are used to prove the first part of the following theorem.
+		
+			\begin{thm}
+			For any lattice $\Gamma$ of $\oscn$ there are both closed and open timelike and spacelike geodesics on the compact space $\oscn / \Gamma$.
+		\end{thm}
+		
+		\begin{proof}
+						1) Existence of closed timelike and spacelike geodesics: As seen in section (3) having closed timelike or spacelike geodesics of $\oscn/\Gamma$ is equivalent to have timelike or spacelike geodesics of $\oscn$ that intersect $\Gamma$ at some positive time.
+			
+			Take an element $(w,0,0) \in \Gamma$ with $w>0$ (see Lemma \ref{oscilador-elementos}), and consider any element $\gamma=(z, \eta, t) \in \Gamma$. Thus,  by multiplying those elements one gets  
+			
+			$(w,0,0)^m.({z}, {\eta},{t})=(m w+{z},{\eta}, {t})$ for any $m \in \mathbb{Z}$. 
+			
+			Consider now the following two posibilities for $\mathrm{K_0}$ (Equation \eqref{oscilator-N}):
+			
+			\begin{itemize}
+				\item Case $\mathrm{K_0} = 1$. This is the case of the second item of Lemma (\ref{oscilador-elementos}). Thus,  there exists $\gamma = (z,0,t) \in \Gamma$ with $z t \neq 0$. Let $\gamma_m := (m w+z, 0, t)=(w,0,0)^m.(z,0,t)$ and consider the geodesic $\alpha_m$ with initial velocity $X =  d \ Z + \sum_j (b_j X_j + c_j Y_j) + a T$ satisfying 
+				$$a=t,\quad b_j=c_j=0, \quad d_m = m w + z.$$ 
+				 It follows from equations above that $\alpha_m(1)=\gamma_m$ (in fact, for $\mathrm{K_0}=1$ the matrix in \eqref{oscilador_geos_1} is trivial). Finally $\alpha_m$ is timelike or spacelike depending on  $\frac{mw+z}{t}$ is negative or positive respectively; and  any case can be achieved by choosing $m$ conveniently. 
+				
+				\item Case $\mathrm{K_0}>1$. Consider $\gamma=(x,u,(\mathrm{K_0}-1)t_0)$, and for $m\in \Z$ define 
+				$$\gamma_m := {(m \omega + x, u, (\mathrm{K_0}-1) t_0)} = (w,0,0)^m.(x,u,(\mathrm{K_0}-1) t_0).$$
+				 For every $\gamma_m$ the matrix in Equation \eqref{oscilador_geos_1} is non-singular (because if $\lambda_j (\mathrm{K_0}-1) t_0 = 2 \pi s_j$ for integers $s_j$ one gets $t_0 = \frac{2 \pi (\mathrm{K_0}-1)}{\lambda_j}$ meaning $\mathrm{K_0}=1$, which is a contradiction). Therefore Equation \eqref{oscilador_geos_1} gives unique solutions $b_j,c_j$, independent of $m$. Then setting $a=(\mathrm{K_0}-1) t_0$ and by solving Equation \eqref{oscilador_geos_2} for $d=d_m$ one gets parameters $a,b_j,c_j,d_m$ such that $\alpha_m(1) = \gamma_m$.     
+				Finally these geodesics are closed in the quotient and are timelike or spacelike according to the expression  $$ 2 p t_0 (mw+x) - \sum_{k=1}^{n} \frac{b_j^2 + c_j^2}{\lambda_k^2}\sin(\lambda_k (K_0-1) t_0) $$ is negative or positive respectively. Both cases are achievable by choosing different values of $m$.
+				
+			\end{itemize}
+		
+		
+			
+			2) Existence of open timelike and open spacelike geodesics:
+			
+		Consider the elements of the lattice of the form  $\hat{\gamma}=(\hat{z},\hat{u}, p \mathrm{K_0} t_0) \in \Gamma$. Those elements can be obtained by considering the $\mathrm{K_0}$th power of  any element with non-null $t$-component. Let $\hat{s}$ such that $\alpha(\hat{s})=(z(\hat{s}),u(\hat{s}),t(\hat{s})) = \hat{\gamma}$, where $\alpha$ is a geodesic of $\oscn$ (with $a \neq 0$). Then it must be $t(\hat{s}) = a \hat{s} = p \mathrm{K_0} t_0$, which implies $u(\hat{s})=0$ and $z(\hat{s}) = (d + \frac{1}{2 a} \sum^n_{k=1} \frac{b_k^2+ c_k^2}{\lambda_k}) \frac{p \mathrm{K_0}t_0}{a}$, where $a, b_k, c_k, d$ define the initial velocity of $\alpha$. \\
+			
+			For any $\varepsilon >0$ consider the interval  $I_d := [d, d+ \epsilon]$. If for any $d'$ in $I_d$ the geodesic of initial velocity given by $a, b_k,c_k, d'$  intersects the lattice at $s'$, say $\alpha_{d'}(s') \in \Gamma$ then it must hold $t'(s') = r' t_0$ for some integer $r'$. From this, define a function $F: I_d \to \ZZ$, $d'\to r'$. It is easy to see that there is an infinitely repeating element in the image of $F$, named it $r_{\infty}$. Then $A_d:= \{ d' \in I_d : F(d')= r_{\infty} \}$ is bounded and contains a convergent subsequence, namely $\{d'_n\}$.
+			
+			Finally take the elements in the lattice $\Gamma$ given by
+			\begin{eqnarray*}
+				\alpha_{d'_n}(\frac{r_{\infty} t_0}{a}) = ( (d'_n + \frac{1}{2 a} \sum_{k=1}^{n} \frac{ b_{k}^{2}+c_k^{2}}{\lambda_k})\frac{\hat{t}}{a}- \frac{1}{2 a^{2}} (  \sum_{k=1}^{n} \frac{b_{j}^{2}+c_j^2}{\lambda_k^{2}} \sin(\lambda_k \hat{t}) ), \\ 
+				R_1(r_{\infty} t_0)\left( \begin{matrix}
+					b_1 \\
+					c_1 \\
+				\end{matrix} \right),..., R_n(r_{\infty} t_0)\left( \begin{matrix}
+					b_n \\
+					c_n \\
+				\end{matrix} \right), \\     
+				r_\infty t_0 ),
+			\end{eqnarray*}
+			
+			with $R_j(x) := \left( \begin{matrix}
+				\sin{(\lambda_j x)} & \cos{(\lambda_j x)} -1 \\
+				1 - \cos{(\lambda_j x)} & \sin{(\lambda_j x)} \\
+			\end{matrix} \right)
+			\left( \begin{matrix}
+				b_j \\
+				c_j \\
+			\end{matrix} \right)$ , see \eqref{oscilador_geos_1}. Since $\{d'_n\}_n$ is convergent, the resulting sequence $\{ \alpha_{d'_n}(\frac{r_{\infty} t_0}{a}) \}_n$ also converges. This is a contradiction since $\Gamma$ is discrete.
+			
+		\end{proof}
+		
+		
+		
+	
+	\subsection{Remarks}
+	Consider the group $G=\oscn \times \R$. This group is simply connected, has a bi-invariant Lorentzian metric and admits cocompact lattices; however its Lie algebra is not indecomposable. This last fact affects the geometry of $M=G/\Gamma$, for $\Gamma$ a cocompact lattice. Take for instance the lightlike geodesics of $M$. Take a geodesic of $\R$ of the form $\gamma(t)=\beta t$, and let $\alpha$ be a geodesic of $\oscn$. Then the curve  $c(t)=(\alpha(t),\gamma(t))$ is lightlike on $M$ if the following equality holds
+	\begin{equation}\label{remarkosc}
+		0 = \, <\alpha'(0),\alpha'(0)> \, + \, r^2, 
+	\end{equation}
+	where $\la \,,\,\ra$ is the metric of the oscilator (\ref{metricosc}) at the identity. It follows that $\alpha$ must be a timelike geodesic of $\oscn$. Choose $\Lambda_{n,0}$  a lattice of $Osc_1(1)$, and $w \Z$ a lattice of $\R$, which is the case for any real $w \neq 0$. Thus,  $\Lambda_{n,0} \times w \Z$ is a lattice of $G=Osc_1(1) \times \R$.
+	
+	The lightlike condition in this case, explicitly Equation (\ref{remarkosc}), gives
+	
+	\begin{equation*}
+		0 = \, 2 a d + \frac{b+c}{2a} + \, r^2. 
+	\end{equation*}
+	
+	Should $c(t)$ be a closed lightlike geodesic of $G$ then there exists some  $s>0$, such that $\alpha(s) \in \Lambda_{n,0}$ and $r(s) \in w \Z$. From the equations for  $\alpha$ it follows that $s=\frac{2 \pi k}{a}$ for some $k \in \Z$ and $z(\frac{2 \pi k}{a})=(d+\frac{b+c}{2 a})(\frac{2 \pi k}{a})=\frac{m}{2n}$ for some $m \in \Z$. This can be reduced to 
+	
+	\begin{equation*}
+		r^2 = \, - \frac{a^2 m}{2 \pi k},
+	\end{equation*}
+	
+	also it must be that $\gamma(\frac{2 \pi k}{a}) = r \frac{2 \pi k}{a} = w z$ $\rightarrow$ $r^2 = \frac{a^2 z^2 w^2}{(2 \pi k)^2}$. Then,  since $a \neq 0$ one may have
+	
+	\begin{equation*}
+		w^2 = -\frac{2 \pi k m}{z^2}.
+	\end{equation*}
+	
+	In conclusion, since it is possible to choose $w$ for which the equality above never holds  for any $k,z \in \Z$, lightlike geodesics of $Osc_1(1) \times \R/\Gamma$ are never closed. Take for instance  $w = e\in \R$. 
+	
+	
+	%verificar si el espacio generado esta bien
+	
+	
+	\section{Isometries of the oscillator groups and compact quotients}
+A isometry of  a Lie group $(G, \lela\,,\,\rira)$ is a differentiable diffeomorphism $\Psi:G \to G$ such that its differential preserves the metric at every point.  
+    The group of isometries of a Lie group with a left-invariant pseudo-Riemannian  metric can be expressed as $Iso(G) = L(G)F(G)$, where $L(G)$ represents the subgroup of left translations and $F(G)$ is the set of  those isometries that fix the identity element of $G$.  Since every isometry $\Psi$ decomposes as $\psi = L_g \circ \phi$ where $\phi(e)=e$, the main question is determine $F(G)$. For any $\phi\in F(G)$ its differential $d\phi_e$ is a linear map on $\mathfrak g$. Let $F(\mathfrak g)$ the set of $d\phi_e$ for  $\phi \in F(G)$.
+    
+    
+    A local isometry  at the identity element  $e$ is a differential diffeomorphism $\Psi':V_1 \to V_2$, where $V_1$ are neighborhhods fo $e\in g$ such that the differential $d\Psi'$ preserves the metric at every point of $V_1$.  To compute local isometries, M\"uller proved the next result.
+
+    \begin{thm}[\cite{MU} Theorem 2.2] 
+    Let $(G, \lela\,,\,\rira)$ denote a Lie group with a bi-invariant metric.     Let $A$ be a linear endomorphism of $\mgg$. Then there exists a local isometry $\Phi$ of $G$ at $e$ such that $d \Phi_e = A$ if and only if $A$ satisfies the following conditions:
+        \begin{enumerate}
+            \item $\lela AX, AY \rira = \lela X, Y \rira$ ; $X,Y \in \mgg$
+            \item A([X,[Y,Z]]) = [AX,[AY,AZ]]
+        \end{enumerate}
+        for all $X,Y \in \mgg$
+    \end{thm}
+
+The aim now is to give the isometry group of $\oscn$. As explained the essential point is to determine the isotropy subgroup $F(\oscn)$. Set 
+
+- $\mathfrak f(\oscn)$ the Lie algebra of $F(G)$,
+
+- $F(\mathfrak{osc}_n(\lambda_1, \hdots, \lambda_n))$ the group of isometries of the bilinear form on $\mathfrak{osc}_n(\lambda_1, \hdots, \lambda_n)$, that is 
+$$Q_e = dtdz + \sum_{j=1}^n \frac{1}{\lambda_j}(dx_j^2 + dy_j^2).$$
+- $\mathfrak f(\mathfrak{osc}_n(\lambda_1, \hdots, \lambda_n))$ the Lie algebra of $F(\mathfrak{osc}_n(\lambda_1, \hdots, \lambda_n))$. 
+
+Since $\oscn$ is simply connected, the following map is a isomorphism (see \cite{MU})
+$$\phi \in F(\oscn) \quad \to \quad d\phi_e\in F(\mathfrak g).$$
+Moreover the group $F(\mathfrak g)$ consists of the linear maps $A:\mathfrak g\to \mathfrak g$ satisfying the conditions of the theorem above. 
+
+Bourseau in\cite{Bou} studied to group $F(\mathfrak{osc}_n(\lambda_1, \hdots, \lambda_n))$. In the next paragraphs we reproduce the main  information of that work. Let $\rho$ denote the following matrix of $GL(2n, \mathbb R)$:
+$$ \rho = \left( 
+\begin{matrix} 
+\lambda_1 & & & & \\
+& \lambda_1 &   & &\\
+& & \ddots & & \\
+& & & \lambda_n & \\
+& & & & \lambda_n
+\end{matrix}\right).$$
+Let $p\in \mathbb N$ with $0:=n_0 < n_1 < \hdots < n_p:=n_p$ such that
+$$\rho_{\nu}:=\lambda_{n_{\nu - 1}+ 1}= \hdots = \lambda_{n_{\nu}}\quad \mbox{ for } \nu=1, \hdots, p$$ and let $m_{\nu}:=n_{\nu}- n_{{\nu}-1}$. 
+    
+    \begin{prop} For the bi-invariant metric in \eqref{metricosc}, let $A\in F(\mathfrak g)$. Then in the basis $Z, \{X_i, Y_i\}, T$ of $\mathfrak{osc}_n(\lambda_1, \hdots, \lambda_n)$, $A$ can be, for $\nu=1, \hdots, p$:
+    	$$\varepsilon  \left( 
+    	\begin{matrix} 
+    	 1 &	c_1^{\tau}	&\hdots  &c_p^{\tau}   &   -\frac12 \sum_{\nu=1}^p  \rho c_{\nu}^{\tau} c_{\nu}\\
+    0	 &	B_1 & & &  - \rho_1 B_1 c_1\\
+    \vdots	&	& \ddots &   &  \vdots\\
+    0	&	& & B_p &  - \rho_p B_1 c_p\\
+   0 & & & 0 & 1
+    	\end{matrix}\right), \quad \mbox{where } \varepsilon=\pm 1, c_{\nu}\in \mathbb R^{2m_{\nu}}, B_{\nu}\in \mathrm{O}(2 m_{\nu}).$$
+    \end{prop}
+%One can see that any bi-invariant metric on $\oscn$ has the form
+%$$Q_{a,b}=b \left( \sum_j \frac1{\lambda_j} (dx_j^2 + dy_j^2)+ dz dt + a dt^2 \right), \qquad \mbox{ where } a\in\R, b\in \R-\{0\}.$$
+%Bourseau proved that the group of isometries fixing the identity element for any $a, b$ as above coincides with $F(\oscn)$ for $a=0, b=1$ we are considering. 
+Below, one describes the structure of $F(\mathfrak{osc}_n(\lambda_1, \hdots, \lambda_n))$.
+
+\begin{defn} Let $K$ be the compact group 
+	$$K= \mathrm{O}(1)\times \times_{\nu=1}^p \mathrm{O}(2m_{\nu}).$$
+	Define the semidirect product
+	$$F=K\ltimes_{\pi} \mathbb R^{2n}$$
+	where 
+	$$\pi(\varepsilon, B_1, \hdots, B_p)(c)=\left( \begin{matrix}
+	B_1  & & \\
+	 & \ddots & \\
+	  & & B_p
+	\end{matrix} \right) c.
+	$$	
+	\end{defn}
+\begin{prop} The map $\Psi: F(\mathfrak{osc}_n(\lambda_1, \hdots, \lambda_n)) \to F$ given by
+	$$\Psi \left( \varepsilon  \left( 
+	\begin{matrix} 
+	1&	c_1^{\tau}	&\hdots  &c_p^{\tau}   &   -\frac12 \sum_{\nu=1}^p  \rho c_{\nu}^{\tau} c_{\nu}\\
+0&	B_1 & & &  - \rho_1 B_1 c_1\\
+\vdots &	& \ddots &   &  \\
+0&	& & B_p &  - \rho_p B_1 c_p\\
+0  & &\hdots  & 0 & 1
+	\end{matrix}\right) \right) =(\varepsilon, B_1, \hdots, B_p, c)$$
+	is a isomorphism of Lie groups. 
+\end{prop}
+
+To describe the structure of $F$, we identify the interior automorphisms. Let $Int(h)$ denote the interior automorphism, with $d_e Int(h)=Ad(h): \mathfrak{osc}_n(\lambda_1, \hdots, \lambda_n)$. If we denote by $h=(z,v,t)$, clearly $Int(h)=Int(0,v,t)$.
+%\begin{itemize}
+%	\item  $Ad(0,0,t) =\left( \begin{matrix}
+%	1 & & \\& R(t) & \\
+%	& & 1
+%	\end{matrix} \right)$.
+%	\item $Ad(0,v,0)= \left( \begin{matrix}
+%1 & &  \\& Id_{2n} & \\
+%	& & 1
+%	\end{matrix} \right)$.
+%\end{itemize}
+
+Let $P_{\lambda_i}(t)\in \mathrm{SO}(2)$ define by
+$$P_{\lambda_i}(t):=\left\{
+	 \begin{array}{cl}
+\left( \begin{matrix}
+	\sin(t\lambda_i) & 1 -\cos(t\lambda_i)\\
+-1 +\cos(t\lambda_i)  & \sin(t\lambda_i)
+\end{matrix}\right) & \mbox{ for } t\in \mathbb R -\{\frac{2m\pi}{\lambda_i}, m\in \mathbb Z\}\\
+ \left( \begin{matrix}
+1 &0\\
+0  & 1
+\end{matrix}\right) & \mbox{ for } t\in\{\frac{2m\pi}{\lambda_i}, m\in \mathbb Z\}
+\end{array}	
+\right.
+$$
+and define $P(t)\in \mathrm{SO}(2n)$ by
+$$P(t)=\left( \begin{matrix}
+P_{\lambda_1}(t) & & \\
+& \ddots & \\
+& & P_{\lambda_n}(t)
+\end{matrix}\right).$$
+
+\begin{lem} Consider the following element on $F(\mathfrak{osc}_n(\lambda_1, \hdots, \lambda_n))$:
+	$$\left( \begin{matrix}
+	1 & & \\
+	& B & \\
+	& & 1
+	\end{matrix}\right).$$
+Then there exists a isometry $\Theta(B):\oscn \to \oscn$ given by
+$\Theta(B)(z,v,t)=(z, P(t)^{\tau}BP(t)v, t)$ with $d \Theta(B)_e=\left( \begin{matrix}
+1 & & \\
+& B & \\
+& & 1
+\end{matrix}\right).$
+\end{lem}
+
+Let $K_1(\oscn)$ define by
+$$K_1(\oscn)=\{\Theta(B):\oscn \to \oscn \,  /\,$$
+$$\qquad \qquad \qquad  \qquad \qquad \qquad \Theta(B)(z,v,t)=(z,P(t)^{\tau}BP(t)v,t)\, B_{\nu}\in\mathrm{O}(2m_{\nu})\}$$
+and let $$K(\oscn)=K_1(\oscn)\cup sK_1(\oscn),$$
+where $s:\oscn \to \oscn, \, s(g)=g^{-1}$ the inversion map.
+Moreover 
+$$K_1(\oscn)_0=\{\Theta(B)\in K_1(\oscn)\,/\, B_{\nu}\in \mathrm{SO}(2m_{\nu})\}.$$
+Recall that the conjugation map $I{(z,v,t)}$ depends only on $(v,t)$ and this set $\{(v,t): v \in \mathbb R^{2n}, t\in \mathbb R\}$ with the structure $\oscn/\{(z,0,0)\}_{z\in\mathbb R}$ is a solvable Lie group of dimension $2n+1$. Denote by $Int(\oscn)$ the set of inner automorphisms, which is a subgroup of isometries. 
+
+Let $s:\oscn \to \oscn$ denote the inversion  isometry:
+$$s: (z,v,t) \quad \to \quad (z,v,t)^{-1}=(-z, -R(-t)v,-t).$$
+
+    \begin{thm}\cite{Bou} \label{Bou}
+        The subgroup of isometries fixing the identity element has the next structure
+        $$F(\oscn)=K(\oscn)\cdot 
+       Int(\oscn),$$
+       $ \, \mbox{ with  }\, K(\oscn)\cap Int(\oscn)=\{id\}.$
+        
+        Furthermore, $Int(\oscn)$ is a normal subgroup in $F(\oscn)$ and it holds
+    $$ \begin{array}{crcl}
+        	(i) & \Theta(B)\circ I_{(v,t)}\circ \Theta(B)^{-1} & = &Int(JBJ^{\tau}v,t);\\  	
+        
+        	(ii) & s\circ I_{(v,t)}\circ s^{-1} & = & Int(v,t);\\
+        
+        (iii) & s \circ \Theta(B) \circ s^{-1} &   = & \Theta(B).
+        \end{array}$$
+  $F(\oscn)$ consists of $2^{p+1}$ connected components and for the connected component of the identity one has
+  $$F(\oscn)_0=K_1(\oscn)_0\cdot Int(\oscn).$$
+        \end{thm}
+
+   
+As corollary one has that the Lie algebra of $F(\oscn)$ is a Lie algebra isomorphic to the following one
+$$\mathfrak f ={\Large \times}_{\nu=1}^p \mathfrak{so}(2m_{\nu}) \ltimes \mathbb R^{2n}.$$
+    Let $Aut(\oscn)$ denote the group of automorphisms of the oscillator group and let $Sp(m_{\nu})$ denote the group of $2m_{\nu}\times 2m_{\nu}$-symplectic matrices over $\R$. Now, we would like to determine, which isometries are automorphisms. Denote by $\tilde{K}_1$ the compact subgroup of $K_1(\oscn)$ given by 
+     $$\tilde{K}_1=\{\Theta(B)\in K_1(\oscn)/B_{\nu}\in \mathrm{O}(2m_{\nu})\cap Sp(2m_{\nu})\}.$$
+	Take $M\in \mathrm{O}(2n)$ given by
+	$$M=\left( \begin{matrix}
+	1 & 0 & & &\\
+	0 & -1 & & &\\
+	& & \ddots & &\\
+	& & & 1 & 0\\
+	& & & 0 & -1
+	\end{matrix}
+	\right).
+	$$
+	\begin{prop}
+		Let $\tilde{K}$ be the compact subgroup of $K(\oscn)$ given by
+	$\tilde{K}=\tilde{K}_1 \cup s\circ \Theta(M) \circ \tilde{K}_1$, then it holds
+	$$F(\oscn)\cap Aut(\oscn)=\tilde{K}\cdot Int(\oscn).$$
+	\end{prop}
+Finally Bourseau studied the isometry group of $\oscn$. He found that
+the Lie algebra of $Iso(\oscn)$ is the semidirect product
+$$\mathfrak{iso}(\oscn)=(\times_{\nu=1}^p \mathfrak{so}(2m_{\nu}))\ltimes \mathfrak g_{2n},$$
+where $\mathfrak{g}_{2n}$ is oscillator algebra of dimension $4n+2$. 
+
+Thus, the isometry group follows 
+$$Iso(\oscn)=L(\oscn) F(\oscn)$$
+ and it holds $L(\oscn)\cap F(\oscn)=\{id\}.$
+
+
+\begin{rem}
+	Note that since the inversion map $h\to h^{-1}$ is a isometry of the Lie group  $(\oscn, \lela\,,\,\rira)$, then the compact spaces $\Lambda \backslash \oscn$ and $\oscn/\Lambda$ are isometric. In fact the map $x\Lambda \to \Lambda x^{-1}$ is a isometry between both spaces. Clearly $\oscn$ acts on $\oscn/\Lambda$ on the left transitively.
+\end{rem}
+
+\subsection{Isometries in the quotients. } The aim now is to study the isometry group of the quotient spaces. Let $\Lambda$ denote a discrete subgroup of $\oscn$ such that  $M=\oscn/\Lambda$ is a compact space. Since the metric on $\oscn$ is both, right and left-invariant, it can be induced to the cosets $g\Lambda\in M$. Indeed a isometry of $M$ gives rise to a local isometry in $\oscn$, since the projection $\oscn \to M$ is a submersion which is a local isometry. Thus, one has a local isometry of $\oscn$ satisfying conditions in the paragraphs above. 
+
+On the other hand, some isometries of $\oscn$ can be induced to the quotient. The next result explicit conditions of such maps. %In fact,  any translation on the left $L_h:\oscn \to \oscn$ can be induced to the quotient as the map $\tau_h(g\Lambda)=hg\Lambda$. 
+
+\begin{defn} Let $f$ be  an isometry of $\oscn$, and $\Lambda$ a lattice. We say that $f$ is {\em fiber preserving} if $f(g)^{-1} f(g\lambda) \in\Lambda$ for all $g \in \oscn$, and for every $\lambda\in \Lambda$. 
+\end{defn}
+		If $f$ is a fiber preserving
+isometry, it induces an isometry  $\tilde{f}$ on the compact space $M=\oscn\backslash \Lambda$   by defining $\tilde{f}(g\Lambda) = f(g)\Lambda$. 
+
+
+\begin{obs} Note the following facts. 
+	\begin{itemize}
+		\item Translations on the left by elements of group, are fiber preserving maps. Every map $L_h$ induces the isometry $\tau_h$ in $M$. In particular $L_{\lambda}(\Lambda)\subseteq \Lambda$ for every $\lambda\in \Lambda$. Denote by  $\tilde{L}(M)=\{\tau_g:g\in \oscn\}$. 
+		\item If $f$ is a fiber preserving map that fixes the identity, then $f(\lambda)\in \Lambda$, for every $\lambda$ in the lattice $\Lambda$. 
+	\end{itemize}
+	
+\end{obs}
+
+
+Recall that whenever the lattices $\Lambda_1$ and $\Lambda_2$ are not pairwise isomorphic, they determine non-diffeomorphic solvmanifolds (see for instance \cite{Ra}).
+
+One can study the isometry group of $\oscn/\Lambda$ once one has information about the isometry group of $\oscn$. The following result is consequence of the Lifting theorem. The proof can be seen in \cite{BOV}.
+
+\begin{thm} Let $G$ be an arcwise-connected, simply connected Lie group with a bi-invariant metric and $\Lambda$ be a discrete subgroup
+of $G$. Then every isometry $f$ of $G/\Lambda$ is induced to $G/\Lambda$ by a fiber preserving isometry of $G$.
+\end{thm}
+
+In view of that we proceed to study the fiber preserving isometries of $G$, specifically, those in the isotropy subgroup.  
+
+
+Analogously as in \cite{BOV}, computations show that neither the inversion map $s$, nor the map $\Theta(B)$ are fiber preserving.
+In fact, to see that assume $\lambda=(\tilde{z},\tilde{v},\tilde{t})\in \Lambda$.  By computing 
+		$(z,v,t)(\tilde{z},\tilde{v},\tilde{t})^{-1}(-z,-R(-t)v,-t)$ and looking at the component in $\mathbb R^{2n}$, one obtains 
+				
+		$v-R(-\tilde{t})v-R(t-t_1)\tilde{v},$ 
+		
+		which must belong to $\Lambda\cap \mathbb R^{2n}$ for every $v\in  \mathbb R^{2n}$ and $t\in \mathbb R$. In particular for $v=0$ one gets that for all $t\in \mathbb R$, it holds $R(t-t_1)\tilde{v}\in \Lambda\cap \mathbb R^{2n} \subset \Lambda$ which is countable set. This is contradiction. And analogously with $\Theta(B)$. 
+
+Thus, it rest to determine which inner autormophisms are fiber preserving. Let $I_h: \oscn \to \oscn$, then
+$$I_h(g)^{-1}I_h(g\lambda)=hg^{-1}h^{-1} hg\lambda h^{-1}= h\lambda h^{-1}\in\Lambda,$$ for every $\lambda\in \Lambda$. The condition above says that  
+  $h \in N_G(\Lambda)$, the normalizer of the lattice $\Lambda$ in $\oscn$. 
+
+Since any isometry $f$ of the Lie group can be written as $f=L_p\circ g$ with $g$ is a isometry fixing the isometry element, we have that any isometry in the quotient space $M=\oscn/\Lambda$ can be written as $\tilde{f}=\tau_g\circ \tilde{g}$, where $\tilde{g}$ denotes the isometry induced to the quotient by $g$. 
+
+
+
+Consider the following homomorphisms where $G=\oscn$:
+\begin{itemize}
+	\item $\widetilde{I}:N_G(\lambda) \to Iso(M)$ given by $\widetilde{I}(h)=\widetilde{I}_h$ and
+	\item $\tau: G \to Iso(M)$ which gives $\tau(g)=\tau_g$.
+\end{itemize}
+
+By Isomorphism Theorem, one has $\tilde{L}(M)=Im\tau=G/\ker\tau$ and $\ker\tau$ contains the elements in $Z(\oscn)\cap \Lambda$, implying that $\tau$ is not injective. 
+
+On the other hand it is easy to see for any $h\in Z(\oscn)$ one has $I_h(x)=x$, so that $h\in \ker \widetilde{I}$. And in this case $\widetilde{I}$ is not injective. 
+
+In any case, to specify those statements one needs more information about $\Lambda$. 
+
+
+\begin{prop}
+ Let $\Lambda$ be a lattice in $\oscn$. The isometries in the Lie group that are fiber preserving correspond to translations on the left by elements of the group and the inner automorphisms $I_h$ for $h\in N_G(\Lambda)$. Moreover, 
+ any isometry $f$ in $M=\oscn/\Lambda$ can be written as $f=\tau_g\circ \widetilde{I}_h$ but this  is not necessarily unique. 
+\end{prop}
+
+\begin{rem} For the subgroups $\Lambda$ in Example \ref{Lattice4}, it was proved in \cite{BOV}  that 
+	
+	$\tilde{L}(M)\cap Im \tilde{I}=\{\tau_Z\circ\widetilde{I}_{\lambda}, \mbox{ for } Z\in Z(G), \lambda\in \Lambda_{k,s}\}$. 
+	\end{rem}
+	%bibliograf\'ia
+	
+	\begin{exa}
+	In dimension four one may consider the lattices $\Lambda_{k,0}, \Lambda_{k,\pi}, \Lambda_{k,\pi/2}$ in the oscillator group $G$ of dimension four with $\lambda_1=1$. See Example \ref{Lattice4}. As said in \cite{BOV}, since the subgroups $\Lambda_{k,j}$ are not pairwise isomorphic, the corresponding compact spaces are not homeomorphic. 
+	
+	
+To	compute the normalizers of such lattices, one may  may find the elements $(z,v,t)$ such  that
+	$(z,v,t)(\tilde{z},\tilde{v},\tilde{t})(-z,-R(-t)v,-t)\in \Lambda$, for  all $(\tilde{z},\tilde{v},\tilde{t})\in \Lambda$, where $\Lambda$ is a lattice. The proof follows by writing down the coordinates. 
+	\begin{itemize}
+			\item For $\Lambda_{k,0}$ the map $R(nt_0)$ is the identity for $t_0=2\pi$. Thus, one has $v+R(t)\tilde{v}-R(\tilde{t})v\in \mathbb Z^2$, implies that $R(t)=s\frac{\pi}2$ for $s\in \mathbb Z$.
+			
+			From the $z$-coordinate one has 
+			
+			\smallskip
+			
+			$\tilde{z}+\frac12 v^{\tau} JR(t)\tilde{v} -\frac12 v^{\tau} J R(\tilde{t})v-(R(t)\tilde{v})^{\tau}JR(\tilde{t})v= \frac{u}{2k}$ for some $u\in \mathbb Z$,
+			
+			\smallskip
+			
+			which implies $v^{\tau}JR(t)\tilde{v}=\frac{\tilde{u}}{2k}$ for some $\tilde{u}\in \mathbb Z$. Therefore $v\in \frac{1}{2k}\mathbb Z^2$. 
+			
+			So, we get $N_G(\Lambda_{k,0})=\mathbb R\times \frac{1}{2k}\mathbb Z^2\times \frac{\pi}2 \mathbb Z$. 
+			
+			\item For $\Lambda_{k,\pi}$ the map $R(2n\pi)$ is the identity  or $R(n\pi)=-Id$ for $n$ odd.
+			
+			A similar reasoning as above gives $N_G(\Lambda_{k,\pi})=\mathbb R\times \frac{1}{2}(\mathbb Z)^2\times \frac{\pi}2 \mathbb Z$.	
+		 \item For $\Lambda_{k,\pi}$ the map $R(n\pi/2)=\pm Id$ if $n$ is even with $-Id$ if $n\equiv 2 mod(4)$. Thus a reasonning as above says that
+			$N_G(\Lambda_{k,\pi/2})=\mathbb R\times (\mathbb Z)^2 \times \frac{\pi}2 \mathbb Z$.
+		\end{itemize}
+	In dimension six the situation is much more complicated, as we show below. 
+	\end{exa}
+	\subsection{An example in dimension six.} Assume we have the Lie group $Osc(1,\lambda)$ which has the differentiable structure of $\mathbb R^6$. As said in Lemma \ref{lema_medina}, to have a cocompact lattice, one needs that the real numbers $1,\lambda$ generate a discrete subgroup of $\mathbb R$. 
+		On the other hand it is known that a subgroup $H$ of $\mathbb R$ is either discrete or dense. Moreover, if it is discrete, then $H=\mathbb Z r$ being $r=inf(H\cap \mathbb R_{>0})>0$. Thus, we are  in  the last situation. 
+	This implies that there exist $n\in \mathbb Z$ such that $1=nr$ saying that $r\in \mathbb Q$. Analogously, since there exists $s\in \mathbb Z$ such that $sr=\lambda$ we have that $\lambda \in \mathbb Q$. 
+	
+Thus for the corresponding Lie group we have for some $r\in \mathbb Q$, the map $R(t)$ has a matrix presentation as follows:
+$$R(t)=\left( \begin{matrix} 
+\cos(t) & -\sin(t) & 0 & 0\\
+\sin(t) & \cos(t) &0 & 0\\
+0 & 0 & \cos(r t) & -\sin(rt)\\
+0 & 0 & \sin(rt) & \cos(rt)
+\end{matrix}
+\right)$$
+ 
+ Note that if $r=p/q$ with $p$ and $q$ coprime numbers, then $t_0=q$ generates a subgroup of $\mathbb Z$ and both $\cos(2sq\pi)(m),\sin(2sq\pi)(m)\in \mathbb Z$ for every $s,m\in \mathbb Z$ and also $\cos(2sp\pi)(m),\sin(2sp\pi)(m)\in \mathbb Z$ for all $s,m\in \mathbb Z$. 
+ 
+ Thus, $R(2st_0\pi)(\mathbb Z\times \mathbb Z\times \mathbb Z\times \mathbb Z)\subseteq \mathbb Z\times \mathbb Z\times \mathbb Z\times \mathbb Z$, which says that 
+    
+ $\Lambda_{k,0}=\frac1{2k} \mathbb Z\times \mathbb Z^4 \times 2q\pi\mathbb Z$ 
+ 
+ is a cocompact lattice of $\mathrm{Osc}(1,p/q)$ for $k\in \mathbb N$.
+ 
+ Analogously, one proves that the following set is also a cocompact lattice:
+ 
+  $\Lambda_{k,\pi}=\frac1{2k} \mathbb Z\times \mathbb Z^4 \times q\pi\mathbb Z$. 
+  
+  In this case $\cos(sq\pi)(m)=\pm m,\sin(sq\pi)(m)=\pm m$ depending on the parity of $sq$, and  $\cos(2sp\pi)(m)=\pm m,\sin(2sp\pi)(m)=\pm m$  depending on the parity of $sp$. In any case, $\cos(2sq\pi)(m),\sin(2sq\pi)(m)\in \mathbb Z$. A similar reasoning aplies for  the lattice 
+  
+  $\Lambda_{k,\pi/2}=\frac1{2k} \mathbb Z\times \mathbb Z^4 \times q\frac{\pi}2 \mathbb Z$.
+  
+  In this way, we generalize the lattices considered in \cite{BOV} to 
+  \begin{enumerate}
+  	\item $\Lambda_{k,0}=\frac1{2k} \mathbb Z\times \mathbb Z^4 \times 2q\pi\mathbb Z$,
+  	\item $\Lambda_{k,\pi}=\frac1{2k} \mathbb Z\times \mathbb Z^4 \times q\pi\mathbb Z$,
+  	\item $\Lambda_{k,\pi/2}=\frac1{2k} \mathbb Z\times \mathbb Z^4 \times q\frac{\pi}2 \mathbb Z$.
+  	\end{enumerate}
+  
+  Now, compute the normalizers of such lattices. For any lattice $\Lambda$ we may find elements $(z,v,t)$ such  that
+  $(z,v,t)(\tilde{z},\tilde{v},\tilde{t})(-z,-R(-t)v,-t)\in \Lambda$, for  all $(\tilde{z},\tilde{v},\tilde{t})\in \Lambda$. This last expression will be analized in coordinates to explicit those elements in $N_G(\Lambda)$ for every lattice $\Lambda$.
+  
+ 
+  
+   Case i) For $\Lambda_{k,0}$.   Let $(z,v,t)\in N_G(\Lambda_{k,0})$.  Observe that since  $q=2s$ for some $s\in \mathbb Z$  actually   $R(q\pi)$ acts as the identity map.  By computing the corresponding coordinates one gets
+  $$v + R(t)\tilde{v}-v= R(t)\tilde{v}\in \mathbb Z^4,$$
+  which implies $t= \ell\frac{\pi}2$ for $\ell\in \mathbb Z$ for the $2\times 2$ block $\left( \begin{matrix}
+  	\cos(t) & -\sin(t)\\ \sin(t) & \cos(t) 
+  \end{matrix}\right)$ but one also needs that  the other $2\times 2$ block preserves $\mathbb Z \times \mathbb Z$, that is it may hold $\frac{p}q t = s\frac{\pi}2$ for some $s\in \mathbb Z$. From this, one has $t=\ell q\frac{\pi}2$ for some $\ell \in \mathbb Z$.  By looking at the z-coordinate one gets:
+  
+  \smallskip
+  
+ (*) \quad  $\tilde{z}+\frac12 v^{\tau}JR(t)\tilde{v}-\frac12 v^{\tau}JR(\tilde{t})v-\frac12(R(t)\tilde{v})^{\tau}JR(\tilde{t})v= \frac{u}{2k}$ for some $u\in \mathbb Z$. 
+  
+  \smallskip
+  
+  $v\in \frac{1}{2k}\mathbb Z^4$, so that the normalizer of $\Lambda_{k,0}$ becomes the set 
+  \begin{equation}\label{normalizer1}N_G(\Lambda_{k,0})=\{(z,v,t)\in \mathbb R\times \frac{1}{2k}\mathbb Z^4\times q\frac{\pi}2\mathbb Z\}.
+  \end{equation}
+  
+  \smallskip
+  
+  Case ii)   In the family (2) we have to consider situations depending on the congruence classes modulo 2. For $q\equiv 0 \,mod(2)$, the map $R(q\pi)$ acts as 
+  $$a) \left( \begin{matrix} 
+  1 & 0 & 0 & 0\\
+  0 & 1 & 0 & 0\\
+  0 & 0 & -1 & 0\\
+  0 & 0 & 0 & -1
+  \end{matrix}
+  \right),$$
+  while for $q\equiv 1\,mod(2)$ the map $R(q\pi)$ could have  a matrix as below
+  $$b)  \left( \begin{matrix} 
+  -1 & 0 & 0 & 0\\
+  0 & -1 &0 & 0\\
+  0 & 0 & 1 & 0\\
+  0 & 0 & 0 & 1
+  \end{matrix}
+  \right)\quad \mbox{ or } \quad  c) \left( \begin{matrix} 
+  -1 & 0 & 0 & 0\\
+  0 & -1 &0 & 0\\
+  0 & 0 & -1 & 0\\
+  0 & 0 & 0 & -1
+  \end{matrix}
+  \right), 
+  $$
+  where case $b$ occurs in case $p\equiv 0\, mod(2)$ or $p\equiv 1\, mod(2)$ in c). In every case the subgroup generated by $R(q\pi)$ has order two.  
+  
+  To compute the normalizer of $\Lambda_{k,\pi}$, it may hold
+  $v+R(t)\tilde{v}-R(\tilde{t})v\in \mathbb Z^4.$ Whenever  $\tilde{t}\equiv 0$ mod(2) the corresponding matrix is the identity and this gives  $R(t)\tilde{v}\in \mathbb Z^4$ implying that $t=sq\frac{\pi}2$ for some $s\in \mathbb Z$. From this $v-R(\tilde{t})v\in \mathbb Z^4$ for any $\tilde{t}$. This gives
+  for $v=(v_1,v_2,v_3,v_4)$ that
+  \begin{itemize}
+  	\item $v_i\in \frac12 \mathbb Z$ for i=3,4 in case a);
+  	\item  $v_i\in \frac12 \mathbb Z$ for i=1,2 in case b);
+  	\item $v_i\in \frac12 \mathbb Z$ for all $i$ in case c).
+  \end{itemize}
+This will be improved by looking at the z-coordinate in (*). A reasoning as above gives the following normalizers
+\begin{enumerate}
+	\item for case a),  $N_G(\Lambda_{k,0})=\{(z,v,t)\in \mathbb R\times \frac{1}{2k}(\mathbb Z\times \mathbb Z \times k\mathbb Z \times k\mathbb Z) \times q\frac{\pi}2\mathbb Z\};$
+	\item  for case b),  $N_G(\Lambda_{k,\pi})=\{(z,v,t)\in \mathbb R\times \frac{1}{2k}(k\mathbb Z\times k\mathbb Z \times \mathbb Z \times \mathbb Z) \times q\frac{\pi}2\mathbb Z\};$
+		\item  for case c),  $N_G(\Lambda_{k,\pi/2})=\{(z,v,t)\in \mathbb R\times \frac{1}{2}(\mathbb Z\times \mathbb Z \times \mathbb Z \times \mathbb Z) \times q\frac{\pi}2\mathbb Z\}.$
+	\end{enumerate}
+
+ 
+  Case iii)   For $t=q \pi/2$ one may consider different situations depending on the congruence class modulo 4:
+   
+  $$q\equiv 1(4) \, \left( \begin{matrix} 
+  	0 & -1 & 0 & 0\\
+  	1 & 0 &0 & 0\\
+  	0 & 0 & \cos(p \frac{\pi}2) & -\sin(p\frac{\pi}2)\\
+  	0 & 0 & \sin(p \frac{\pi}2) & \cos(p \frac{pi}2)
+  \end{matrix}
+  \right),\, q\equiv 2(4)\,\left( \begin{matrix} 
+  	-1 & 0 & 0 & 0\\
+  	0 & -1 & 0 & 0\\
+  	0 & 0 & \cos(p \frac{\pi}2) & -\sin(p\frac{\pi}2)\\
+  	0 & 0 & \sin(p \frac{\pi}2) & \cos(p \frac{pi}2)
+  \end{matrix}
+  \right),$$
+  $$q\equiv 3(4) \, \,\left( \begin{matrix} 
+  	0 & 1 & 0 & 0\\
+  	-1 & 0 &0 & 0\\
+  	0 & 0 & \cos(p \frac{\pi}2) & -\sin(p\frac{\pi}2)\\
+  	0 & 0 & \sin(p \frac{\pi}2) & \cos(p \frac{pi}2)
+  \end{matrix}
+  \right), \quad q\equiv 4(4) \quad \left( \begin{matrix} 
+  	1 & 0 & 0 & 0\\
+  	0 & 1 &0 & 0\\
+  	0 & 0 &  \cos(p \frac{\pi}2) & -\sin(p\frac{\pi}2)\\
+  	0 & 0 & \sin(p \frac{\pi}2) & \cos(p \frac{pi}2)
+  \end{matrix}
+  \right). 
+  $$
+  
+ Recall that  $p$ and $q$ are coprimes. The $2\times 2$ block
+ $$\left( \begin{matrix}
+ 	 \cos(p \frac{\pi}2) & -\sin(p\frac{\pi}2)\\
+ \sin(p \frac{\pi}2) & \cos(p \frac{pi}2)
+ \end{matrix}
+\right)$$
+can be one of the following depending on the congruence class of $p$ modulo 4:
+$$p\equiv 0(4) \left( \begin{matrix} 
+	1 & 0 \\
+	0 & 1 \end{matrix}\right)\quad p\equiv 1(4) \left( \begin{matrix} 
+	0 & -1 \\
+	1 & 0 \end{matrix}\right)\quad p\equiv 2(4) \left( \begin{matrix} 
+	-1 & 0 \\
+	0 & -1\end{matrix}\right)
+  \quad p\equiv 3(4) \left( \begin{matrix} 
+  0 & 1 \\
+  	-1 &0 \end{matrix}\right)$$
+  
+  Thus, in this case we have to consider these 16 possibilities. By following  similar reasonings as above one gets the corresponding normalizers. 
+  
+  
+    
+	\begin{thebibliography}{GGGG}
+		
+		\bibitem{BG} {\sc O. Baues, W. Globke}, {\it Rigidity of compact pseudo-Riemannian homogeneous spaces for solvable Lie groups}. 
+			Int. Math. Res. Not. {\bf  2018} (10), 3199--3223 (2018). 
+		\bibitem{Be} {\sc A. Beardon}, {\it The geometry of discrete groups}. Springer (1983). First Edition. 
+		
+		\bibitem{Bou} {\sc F. Bourseau}, {\it Die Isometrien der Oszillatorgruppe und einige ergebnisse \"uber Pr\"amorphismen liescher Algebren}. Fakult\"at f\"ur Mathematik der Universit\"at Bielefeld (1989).
+		
+			\bibitem{BOV} {\sc V. del Barco, \sc G. Ovando, \sc F. Vittone}, {\it Lorentzian compact manifolds: Isometries and geodesics}, J. Geom. Phys. {\bf 78}, 48--58 (2014).
+		
+		
+			\bibitem{MF} {\sc M. Fischer}, {\it Lattices of oscillator groups}, J. Lie Theory {\bf 27} (1), 85--110 (2017). 	
+			
+			\bibitem{Hel} {\sc S. Helgasson}, {\it Differential Geometry, Lie Groups, and Symmetric Spaces}, Graduate Studies in Mathematics, vol. {\bf 34}, American Math. Soc. (1999).
+			
+		\bibitem{Me} {\sc A. Medina}, {\it Groupes de Lie munis de m\'etriques bi-invariantes}. (Lie groups admitting bi-invariant metrics), T\^ohoku Math. J., II. Ser. {\bf 37}, 405--421 (1985). 
+		
+		
+	\bibitem{MeRe} {\sc A. Medina,  P. Revoy}, {\it Les groupes oscillateurs et leurs r\'eseaux. (Oscillator groups and their lattices).}, Manuscr. Math. {\bf 52}, 81--95 (1985). 
+	
+	
+%	\bibitem{DM} {\sc D. W. Morris}, {\it Manuscr. Math. 52, 81-95 (1985). }, Deductive Press (2015).
+	
+	
+	\bibitem{MU} {\sc D. M\"uller}, {\it Isometries of bi-invariant pseudo-Riemannian metrics on Lie groups},  Geom. Dedicata {\bf 29} (1),  65--96 (1989).
+	
+		
+		
+		\bibitem{ON} {\sc B. O'Neill}, {\it Semi-Riemannian geometry with
+			applications to relativity}, Academic Press (1983).
+		
+		
+
+		
+		\bibitem{Ov} {\sc G. Ovando}, {\it Lie algebras with ad-invariant metrics- A survey}, In Memorian Sergio Console, Rendiconti del Seminario Matematico di Torino. {\bf  74}, 1-2, 241 -- 266 (2016).
+		
+		\bibitem{Ra} {\sc  M.S. Raghunathan}, Discrete Subgroups of Lie Groups, Springer Verlag, 1972.
+	%%	\bibitem{WAR}
+		%\bibitem{HEL} {\sc Helgasson}, {\it COMPLETAR, VER LIBROS}.
+		
+	%	\bibitem{INCLUDE1}{\it falta1}
+		
+	%	\bibitem{INCLUDE2}{\it Jacobson-Morozov}
+		
+	\end{thebibliography}
+	
+	\appendix 
+	%\section{parametros appendice} \label{appendix1}
+	%En la siguiente table se muestran los valores ...
+	
+	
+	
+\end{document} 
+ \begin{document}
