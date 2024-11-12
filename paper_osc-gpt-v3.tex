@@ -169,7 +169,7 @@
 \title[Geodesics and Isometries on Compact Lorentzian Solvmanifolds]{Geodesics and Isometries on Compact Lorentzian Solvmanifolds}
 
 \begin{abstract}
-This work studies geodesics on Lorentzian homogeneous spaces of the form $M=G/\Lambda$, where $G$ is a solvable Lie group endowed with a bi-invariant Lorentzian metric and $\Lambda \subset G$ is a cocompact lattice. We provide conditions under which lightlike, timelike, or spacelike geodesics on the compact quotient spaces are closed. This study implicitly requires additional information about the lattices in each case. We establish conditions under which every lightlike geodesic on the quotient space is closed. More importantly, this situation depends on the lattice. Moreover, we provide examples in dimension four where not every lightlike geodesic is closed.
+    The aim of this work is the study of geodesics on Lorentzian homogeneous spaces of the form $M=G/\Lambda$, where $G$ is a solvable Lie group endowed with a bi-invariant Lorentzian metric and $\Lambda < G$ is a cocompact lattice. Conditions to assert closedness of light, time or spacelike geodesics on the compact quotient spaces are given. This study implicitly requires additional information about the lattices in each case. We found conditions for which every lightlight geodesic on the quotient space is closed. And more important, this situation depends on the lattice. Moreover, even in dimension four, there are examples of compact solvmanifolds for which not every lightlike geodesic is closed.
 \end{abstract}
 
 \author{Pablo Montenegro and Gabriela P. Ovando}
@@ -185,11 +185,11 @@ This work studies geodesics on Lorentzian homogeneous spaces of the form $M=G/\L
 \maketitle
 
 \section{Introduction}
-A Lorentzian manifold is a connected, smooth, finite-dimensional manifold $(M, \la \, , \ \ra)$ endowed with a Lorentzian metric, which is a second-order smooth tensor field on $M$ inducing, for every $p\in M$, a bilinear form of index 1 on the tangent space $T_pM$ (see \cite{ON}). The geodesics on $M$ are smooth curves $\gamma(t)$ that satisfy the differential equation
+A Lorentzian manifold is a connected, smooth, finite-dimensional manifold $(M, \la \, , \ \ra)$ endowed with a Lorentzian metric, which is a second-order smooth tensor field on $M$ inducing, for every $p\in M$, a bilinear form of index 1 on the tangent space $T_pM$ (see \cite{ON}). The geodesics on $M$ are the smooth curves $\gamma(t)$ that satisfy the differential equation
 \begin{equation*}
 \nabla_{\gamma'(t)}\gamma'(t)=0,
 \end{equation*}
-where $\nabla$ denotes the Levi-Civita connection for $\gamma$. The study of Lorentzian manifolds is of particular interest because models of space-time in general relativity are four-dimensional Lorentzian manifolds. In this context, the nature of a geodesic is determined by its initial conditions. Thus, a timelike geodesic, for which $\la \gamma'(t), \gamma'(t)\ra < 0$, represents the world line of a particle under the influence of a gravitational field. If $\la \gamma'(t), \gamma'(t)\ra = 0$, the geodesic is called lightlike or null, representing the world line of a light ray.
+where $\nabla$ denotes the Levi-Civita connection for $\gamma$. The study of Lorentzian manifolds is of particular interest because models of space-time in general relativity are four-dimensional Lorentzian manifolds. In this context, the nature of a geodesic is determined by its initial conditions. Thus, a timelike geodesic, for which $\la \gamma'(t), \gamma'(t)\ra < 0$, represents the world line of a particle under the influence of a gravitational field. While if $\la \gamma'(t), \gamma'(t)\ra = 0$, the geodesic is called lightlike or null, representing the world line of a light ray.
 
 The study of closed geodesics is a classical topic in Riemannian geometry and has also been explored in Lorentzian geometry using different techniques. Galloway \cite{Ga} showed that any closed Lorentzian surface (compact and without boundary) contains at least one closed timelike or lightlike periodic geodesic. In \cite{Su}, Suhr proved that every closed Lorentzian surface contains two closed geodesics, one of which is definite, i.e., timelike or spacelike. Indeed, there are many open questions.
 
@@ -197,7 +197,7 @@ Lie groups are valuable tools for studying specific geometric behaviors. In part
 
 To complete the study, we determine the existence of closed and open timelike and spacelike geodesics. In Theorem \ref{othergeodesics}, we prove that every type of such geodesic exists and provide explicit examples for each case.
 
-Finally, we examine the isometries of the compact quotients. It was proved in \cite{BG} that the identity component of the isometry group of a pseudo-Riemannian compact space coincides with $G$ whenever $G$ is a solvable Lie group acting by isometries. We base our study on the results obtained in \cite{Bou}, where the isometry groups of the oscillator Lie groups were computed when considered with a bi-invariant metric. By generalizing the results from \cite{BOV}, we compute the isometry groups for certain compact spaces. We observe that isometries fixing the identity element in oscillator groups strictly include the conjugation maps (see Theorem 4.6). However, inducing isometries to the quotient spaces requires conjugation by an element of the normalizer of the corresponding lattice (see Proposition 4.11). Additionally, any left-translation is naturally induced to the quotient. Computations of the normalizer of the lattices become much more intricate in higher dimensions. In the final section, we provide some examples of these computations.
+Finally, we examine isometries of the compact quotients. It was proved in \cite{BG} that the identity component of the isometry group of a pseudo-Riemannian compact space coincides with $G$ whenever $G$ is a solvable Lie group acting by isometries. We base our study on the results obtained in \cite{Bou}, where the isometry groups of the oscillator Lie groups were computed when considered with a bi-invariant metric. By generalizing the results from \cite{BOV}, we compute the isometry groups for certain compact spaces. We observe that isometries fixing the identity element in oscillator groups strictly include the conjugation maps (see Theorem 4.6). However, inducing isometries to the quotient spaces requires conjugation by an element of the normalizer of the corresponding lattice (see Proposition 4.11). On the other hand any left-translation will be induced to the quotient. Computations of the normalizer of the lattices become much more intricate in higher dimensions. In the final section, we provide some examples of these computations.
 
 	
 	
@@ -323,7 +323,7 @@ Note that the oscillator Lie groups are also complete spaces.
 
 Let \( G \) denote a Lie group, and let \( \Gamma \subset G \) be a discrete cocompact subgroup. The quotient space \( M = G/\Gamma \) consists of elements of the form \( g\Gamma \) with \( g \in G \). Since \( \Gamma \) is closed, there exists a unique manifold structure on \( M \) for which the canonical projection \( g \mapsto g\Gamma \) is a smooth submersion (see \cite{Hel}). Finally, the geometry of \( M \) is provided by requiring the projection, named \( \pi \), to be a local isometry. Whenever the Lie group \( G \) is provided with a Lorentzian metric, \( (G, \pi) \) is called a \textit{Lorentzian covering} of \( M \).
 
-Assume \( G \) is equipped with a bi-invariant metric. It follows that the geodesics of \( M \) starting at \( o := \pi(e) \) are of the form \( \hat{\alpha} = \pi(\alpha(t)) \), where \( \alpha \) is a one-parameter subgroup of \( G \) (see \cite{ON}). In addition to this, \( G \) acts on \( M \) by the "translations on the left," which are isometries:
+Assume \( G \) is equipped with a bi-invariant metric. It follows that the geodesics of \( M \) starting at \( o := \pi(e) \) are of the form \( \hat{\alpha} = \pi(\alpha(t)) \), where \( \alpha \) is a one-parameter subgroup of \( G \) (see \cite{ON}). In addition to this, \( G \) acts on \( M \) by the "translations on the left" which are isometries:
 \begin{equation*}
     \tau_g : M \rightarrow M, \quad \text{given by} \quad \tau_g(h\Gamma) := gh\Gamma,
 \end{equation*}
@@ -339,6 +339,7 @@ One can notice that:
 
 Since \( \pi \circ L_g = \tau_g \pi \), one gets that \( \tau(g)\pi \circ \alpha = \pi \circ L_g \circ \alpha \) for a curve \( \alpha: (a,b) \to G \) starting at the identity element \( e \in G \).
 
+A curve $\beta:(a,b)\to G$ (or to $M$) is said {\em non-simple } when it passes through a same point more than once, that is, there exist $t_2\neq  t_1$ such that $\beta(t_1)=\beta(t_2)$.
 \begin{enumerate}
     \setcounter{enumi}{3}
     \item A geodesic \( \alpha: (-\varepsilon, \varepsilon) \to G \), with \( \varepsilon > 0 \) and \( \alpha(0) = e \), giving rise to the curve \( \pi \circ \alpha \) in \( M \) is non-simple in \( M \) if and only if \( \alpha(t) \in \Gamma \) for some \( t > 0 \). \label{punto4}
@@ -388,7 +389,7 @@ In \cite{MF}, Fischer introduced a family of Lie groups named \( \text{Osc}_n(\o
     \item \( e^{B_r} \in SL(2n, \mathbb{Z}) \).
 \end{itemize}
 
-The group operation for \( \text{Osc}_n(\omega_r, B_r) \), based on the manifold \( \mathbb{R} \oplus \mathbb{R}^{2n} \oplus \mathbb{R} \), is given by
+The group operation for \( \text{Osc}_n(\omega_r, B_r) \), with base on the manifold \( \mathbb{R} \oplus \mathbb{R}^{2n} \oplus \mathbb{R} \), is given by
 \begin{equation}
     (z_1, v_1, t_1) \cdot (z_2, v_2, t_2) = \left(z_1 + z_2 + \frac{1}{2} v_1^T N_{-r} e^{t_1 B_r} v_2, v_1 + e^{t_1 B_r} v_2, t_1 + t_2\right).
 \end{equation}
@@ -406,7 +407,6 @@ In particular, according to Example 3.1 of \cite{MF}, the element \( \xi_0 \) sa
 
 	
 	
-\section{The solvmanifolds from the Oscillator groups}\label{sectionosc}
 
 We assert that the lattices \( L(\xi_0) \) of \( \text{Osc}_n(\omega_r, B_r) \) can be associated with lattices of \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \). In fact, for every lattice \( \Gamma \) of \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \), there exists a group \( \text{Osc}_n(\omega_r, B_r) \), \( \xi_0 \in \mathbb{R}^{2n} \), and an isomorphism \( \Phi: \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \rightarrow \text{Osc}_n(\omega_r, B_r) \) such that \( \Phi(\Gamma) = L(\xi_0) \) (see Theorem 5 of \cite{MF}). The explicit definition of \( \Phi \) can be found in the proof of the mentioned theorem. Moreover, the following property of this isomorphism holds:
 
@@ -454,7 +454,7 @@ Additionally, it is shown that \( B_r := \pm t_0 S N_{\lambda} S^{-1} \)\footnot
         \item The lightlike geodesics in \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \) with \( a = 0 \) (see \eqref{geo2}), verify \( b_j = c_j = 0 \) for all \( j = 1, \ldots, n \). Consequently, they take the form \( \alpha_d(s) = (ds, 0, 0) \) and intersect \( \Gamma \) because there exists \( w > 0 \) such that \( (w, 0, 0) \in \Gamma \) according to the last lemma. This means that \( \alpha(\tilde{s}) = (w, 0, 0) \) for some \( \tilde{s} > 0 \).
         \item The lightlike geodesics with \( a \neq 0 \) verify \( \alpha\left(\frac{K_0 t_0}{a}\right) = (0, 0, K_0 t_0) \), see the expressions in \eqref{geo_osc_1}. If the lattice \( \Gamma \) contains an element of the form \( (0, 0, \hat{t}) \) with \( \hat{t} = p t_0 \) for some \( p \in \mathbb{Z} \), then
         \[
-        \alpha(p K_0 t_0) = \alpha(K_0 t_0)^p = (0, 0, \hat{t})^p \in \Gamma.
+        \alpha(p K_0 t_0) = (\alpha(K_0 t_0))^p = (0, 0, \hat{t})^p \in \Gamma.
         \]
     \end{itemize}
 \end{obs}    
@@ -470,7 +470,7 @@ Additionally, it is shown that \( B_r := \pm t_0 S N_{\lambda} S^{-1} \)\footnot
 \begin{proof}
     Recall that it suffices to study the geodesics starting at \( o := \pi(e) \) and that every geodesic \( \hat{\alpha} \) is the projection of some geodesic \( \alpha \) on \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \): \( \hat{\alpha} = \pi(\alpha) \) with \( \alpha(0) = e \). Also, \( \hat{\alpha} \) is closed in \( M \) if \( \alpha(s) \in \Gamma \) for some \( s > 0 \).
     
-    As observed in \ref{obs-osc}, all lightlike geodesics of the form \( \pi((ds, 0, 0)) \) are closed on the compact space \( M \), and so geodesics with this direction will always be closed. Therefore, to prove the theorem, it may hold that any lightlike geodesic with a different starting direction is either closed or simple.\footnote{Is this correct?}
+    As observed in \ref{obs-osc}, all lightlike geodesics of the form \( \pi((ds, 0, 0)) \) are closed on the compact space \( M \), and so geodesics with this direction will always be closed. Therefore, to prove the theorem one can see that any lightlike geodesic with a different starting direction is either closed or simple.
     
     Let \( \alpha \) be a lightlike geodesic with a direction \( X \), which is linearly independent with \( Z \), and suppose that it is closed. This means that there exists some \( \gamma = (z, u, t) \in \Gamma \) for which \( \alpha(s) = \gamma \) for some \( s > 0 \). Since the curve \( \alpha \) is a one-parameter subgroup of \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \), then for any integer \( m \): \( \alpha(ms) = \gamma^m \), which is an element of \( \Gamma \). Recall also that since \( t \in \mathrm{T}(\Gamma) \), it is of the form \( r t_0 \) for some integer \( r \) and \( t_0 = \frac{2 \pi k_i}{K_0 \lambda_i} \). Finally, since \( s = \frac{t}{a} \), one can compute that \( \gamma^{K_0} = \alpha\left(K_0 \frac{t}{a}\right) = (0, 0, K_0 t) = (0, 0, K_0 r t_0) \), and therefore, since \( K_0 r \) is an integer, this element is in the lattice and every lightlike geodesic of \( M \) is closed.
     
@@ -589,15 +589,15 @@ These expressions are used to prove the first part of the following theorem.
 	
 	Take the elements in the lattice \( \Gamma \) given by
 	\begin{eqnarray*}
-		\alpha_{d'_n}\left(\frac{r_{\infty} t_0}{a}\right) &=& \left(\left(d'_n + \frac{1}{2a} \sum_{k=1}^{n} \frac{b_k^2 + c_k^2}{\lambda_k}\right) \frac{\hat{t}}{a} - \frac{1}{2a^2} \sum_{k=1}^{n} \frac{b_j^2 + c_j^2}{\lambda_k^2} \sin(\lambda_k \hat{t})\right), \\ 
+		\alpha_{d'_n}\left(\frac{r_{\infty} t_0}{a}\right) &=& \Biggl( \biggl(d'_n + \frac{1}{2a} \sum_{k=1}^{n} \frac{b_k^2 + c_k^2}{\lambda_k}\biggr) \frac{\hat{t}}{a} - \frac{1}{2a^2} \sum_{k=1}^{n} \frac{b_j^2 + c_j^2}{\lambda_k^2} \sin(\lambda_k \hat{t}), \\ 
 		&& R_1(r_{\infty} t_0) \left(\begin{matrix}
 			b_1 \\
 			c_1 \\
 		\end{matrix}\right), \ldots, R_n(r_{\infty} t_0) \left(\begin{matrix}
 			b_n \\
 			c_n \\
-		\end{matrix}\right), \quad r_{\infty} t_0 \right),
-	\end{eqnarray*}
+		\end{matrix}\right), \quad r_{\infty} t_0 \Biggr),
+    \end{eqnarray*}
 	with
 	\[
 	R_j(x) := \left(\begin{matrix}
@@ -662,7 +662,7 @@ A local isometry is a map \( G \to G \) such that at the identity element \( e \
     \end{enumerate}
 \end{thm}
 
-The aim now is to determine the isometry group of \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \). As explained, the essential point is to determine the isotropy subgroup \( F(\text{Osc}_n(\lambda_1, \ldots, \lambda_n)) \). Define:
+The aim now is to determine the isometry group of \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \). As explained, the essential point is to determine the isotropy subgroup \( F(\text{Osc}_n(\lambda_1, \ldots, \lambda_n)) \). Set:
 
 - \( \mathfrak{f}(\text{Osc}_n(\lambda_1, \ldots, \lambda_n)) \) as the Lie algebra of \( F(G) \),
 - \( F(\mathfrak{osc}_n(\lambda_1, \ldots, \lambda_n)) \) as the group of isometries of the bilinear form on \( \mathfrak{osc}_n(\lambda_1, \ldots, \lambda_n) \), given by:
@@ -709,7 +709,7 @@ and let \( m_{\nu} := n_{\nu} - n_{\nu - 1} \).
     where \( \varepsilon = \pm 1 \), \( c_{\nu} \in \mathbb{R}^{2m_{\nu}} \), and \( B_{\nu} \in \mathrm{O}(2 m_{\nu}) \).
 \end{prop}
 
-Below, we describe the structure of \( F(\mathfrak{osc}_n(\lambda_1, \ldots, \lambda_n)) \). Recall that \( \mathrm{O}(1) = \{-1, 1\} \).
+Below, one describe the structure of \( F(\mathfrak{osc}_n(\lambda_1, \ldots, \lambda_n)) \). Recall that \( \mathrm{O}(1) = \{-1, 1\} \).
  
 
 \begin{defn}
@@ -746,7 +746,7 @@ Below, we describe the structure of \( F(\mathfrak{osc}_n(\lambda_1, \ldots, \la
     is an isomorphism of Lie groups.
 \end{prop}
 
-To describe the structure of \( F \), we identify the inner automorphisms, introduced as conjugation maps. Let \( I_h \) denote the inner automorphism, with \( d_e I_h = \text{Ad}(h): \mathfrak{osc}_n(\lambda_1, \ldots, \lambda_n) \). If we denote \( h = (z, v, t) \), clearly \( I_h = I_{(0, v, t)} \).
+To describe the structure of \( F \), we identify the inner automorphisms, introduced as conjugation maps. Let \( I_h \) denote the inner automorphism, with \( d_e I_h = \text{Ad}(h): \mathfrak{osc}_n(\lambda_1, \ldots, \lambda_n) \). If denotying \( h = (z, v, t) \), clearly \( I_h = I_{(0, v, t)} \).
 
 Let \( P_{\lambda_i}(t) \in \mathrm{SO}(2) \) be defined by
 \[
@@ -889,7 +889,7 @@ and it holds that \( L(\text{Osc}_n(\lambda_1, \ldots, \lambda_n)) \cap F(\text{
 
 \subsection{Isometries in the quotients.}
 
-The aim now is to study the isometry group of the quotient spaces. Let \( \Lambda \) denote a discrete subgroup of \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \) such that \( M = \text{Osc}_n(\lambda_1, \ldots, \lambda_n)/\Lambda \) is a compact space. Since the metric on \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \) is both right- and left-invariant, it can be induced to the cosets \( g\Lambda \in M \). Indeed, an isometry of \( M \) gives rise to a local isometry in \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \), since the projection \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \to M \) is a submersion and a local isometry. Thus, one has a local isometry of \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \) satisfying conditions in the paragraphs above.
+The aim now is to study the isometry group of the quotient spaces. Let \( \Lambda \) denote a discrete subgroup of \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \) such that \( M = \text{Osc}_n(\lambda_1, \ldots, \lambda_n)/\Lambda \) is a compact space. Since the metric on \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \) is both right- and left-invariant, it can be induced to the cosets \( g\Lambda \in M \). Indeed, an isometry of \( M \) gives rise to a local isometry in \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \), since the projection \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \to M \) is a submersion which is a local isometry. Thus, one has a local isometry of \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \) satisfying conditions in the paragraphs above.
 
 On the other hand, some isometries of \( \text{Osc}_n(\lambda_1, \ldots, \lambda_n) \) can be induced to the quotient. The next result specifies the conditions for such maps.
 
